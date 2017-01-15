@@ -44,7 +44,6 @@ class App extends Component {
         {this.sessionButton() }
         <h1>Notemon</h1>
         { welcomeMessage }
-        <Nav />
         <div className="content">
           { this.props.children || <Home /> }
         </div>
