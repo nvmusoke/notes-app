@@ -5,7 +5,6 @@ import { firebase } from '../utils/firebase';
 class GitHubLoginButton extends Component {
   handleClick(e) {
     e.preventDefault();
-
     const provider = new firebase.auth.GithubAuthProvider();
     firebase.auth().signInWithPopup(provider);
   }

@@ -1,15 +1,15 @@
 import firebase from 'firebase';
 
 const config = {
-  apiKey: process.env.FB_AUTH_KEY,
-  authDomain: process.env.FB_AUTH_DOMAIN,
-  databaseURL: process.env.FB_DATABASE_URL,
-  storageBucket: process.env.FB_STORAGE_BUCKET,
-  messagingSenderId: process.env.FB_MESSAGING_SENDER_ID
+  apiKey: "AIzaSyA5G-LRK_AYN1YgkPBB14BHkmaWTXMHcvQ",
+  authDomain: "notesapp-edb56.firebaseapp.com",
+  databaseURL: "https://notesapp-edb56.firebaseio.com",
+  storageBucket: "notesapp-edb56.appspot.com",
+  messagingSenderId: "738595798927"
 };
-
+console.log('key: ',process.env.FIREBASE_AUTH_KEY);
 // Firebase instance
- firebase.initializeApp(config);
+firebase.initializeApp(config);
 
 // Firebase doesn't return data as an array but as a parent object
 //  containing child objects. This will extract them into an array

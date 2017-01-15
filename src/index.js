@@ -1,9 +1,8 @@
+import dotenv from 'dotenv';
+dotenv.config({ silent:true });
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
-import dotenv from 'dotenv';
-
-dotenv.config({ silent: true });
 
 import App from './App';
 import Home from './components/Home';
