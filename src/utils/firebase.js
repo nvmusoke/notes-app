@@ -9,7 +9,7 @@ const config = {
 };
 
 // Firebase instance
-const firebaseApp = firebase.initializeApp(config);
+ firebase.initializeApp(config);
 
 // Firebase doesn't return data as an array but as a parent object
 //  containing child objects. This will extract them into an array
@@ -30,5 +30,5 @@ const firebaseListToArray = (firebaseObjectList) => {
     });
 }
 
-export { firebaseApp as firebase };
+export { firebase };
 export { firebaseListToArray };
