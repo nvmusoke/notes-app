@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { firebase } from '../utils/firebase';
 
-class GitHubLogoutButton extends Component {
+class LogoutButton extends Component {
   handleClick(e) {
     e.preventDefault();
 
@@ -18,4 +18,4 @@ class GitHubLogoutButton extends Component {
   }
 }
 
-export default GitHubLogoutButton;
+export default LogoutButton;

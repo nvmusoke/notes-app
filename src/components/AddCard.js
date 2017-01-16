@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 
 class AddCard extends Component {
   render() {
-    return (
-    )
+    return <div>Add</div>
   }
 }
 

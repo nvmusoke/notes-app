@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { firebase } from '../utils/firebase';
 
-class GitHubLoginButton extends Component {
+class LoginButton extends Component {
   handleClick(e) {
     e.preventDefault();
     const provider = new firebase.auth.GithubAuthProvider();
@@ -17,4 +17,4 @@ class GitHubLoginButton extends Component {
   }
 }
 
-export default GitHubLoginButton;
+export default LoginButton;
