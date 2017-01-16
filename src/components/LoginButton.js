@@ -7,12 +7,14 @@ class LoginButton extends Component {
     e.preventDefault();
     const provider = new firebase.auth.GithubAuthProvider();
     firebase.auth().signInWithPopup(provider);
+
   }
 
   render() {
     return (
       <button onClick={ this.handleClick.bind(this) }
-        className="btn">{ this.props.children }</button>
+        className="btn-github">
+      </button>
     )
   }
 }
