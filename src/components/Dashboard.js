@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+
 import { hashHistory } from 'react-router';
+import { firebase } from '../utils/firebase';
+
+import Lookup from './Lookup';
 import SearchBar from './SearchBar';
 import AddCard from './AddCard';
 import Cards from './Cards';
 import CardProcess from './CardProcess';
-import { firebase,firebaseListToArray } from '../utils/firebase';
-
 
 
 
@@ -51,6 +53,7 @@ class Dashboard extends Component {
           <SearchBar />
           <AddCard clicked={this.handleClick.bind(this)} />
           <Cards />
+
       </div>) : <CardProcess finished={this.restoreDash.bind(this)} />;
 
     return (

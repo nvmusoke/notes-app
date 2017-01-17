@@ -29,6 +29,7 @@ class CardProcess extends Component {
     e.preventDefault();
     console.log('my fucking value: ',value);
     this.setState({
+      title:value,
       note:value
     });
   }
@@ -42,19 +43,24 @@ class CardProcess extends Component {
   }
   saveToDash(e){
     e.preventDefault();
-    const val=[this.state.note,this.state.category];
+
+    const val=[this.state.title,this.state.note,this.state.category];
     const userId = firebase.auth().currentUser.uid;
+
     console.log('savetoDash: ',val);
 
     console.log('back to the fucking dashboard');
+
     firebase.database()
     .ref('/notes')
     .push({
+      title:this.state.title,
       note:this.state.note,
       category:this.state.category,
       uid:userId,
       title:this.state.title
     });
+
   }
   saveAndStay(e){
     e.preventDefault();
