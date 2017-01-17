@@ -57,10 +57,10 @@ class CardProcess extends Component {
       title:this.state.title,
       note:this.state.note,
       category:this.state.category,
-      uid:userId
-    }).then(()=>
-      {this.props.finished()}
-    );
+      uid:userId,
+      title:this.state.title
+    });
+
   }
   saveAndStay(e){
     e.preventDefault();
