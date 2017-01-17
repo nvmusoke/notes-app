@@ -39,7 +39,6 @@ class App extends Component {
     const welcomeMessage = (firebase.auth().currentUser) ?
       <h4>Hi { this.state.user.displayName }!</h4> :
       '';
-      
     return (
       <div className="container">
         {this.sessionButton() }
