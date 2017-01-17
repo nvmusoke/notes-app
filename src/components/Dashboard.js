@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+
 import { hashHistory } from 'react-router';
-import { firebase,firebaseListToArray } from '../utils/firebase';
+import { firebase } from '../utils/firebase';
 
 import Lookup from './Lookup';
 import SearchBar from './SearchBar';
@@ -46,7 +47,6 @@ class Dashboard extends Component {
   }
 
   render() {
-    const noteCards = this.state.cards;
     const html=(this.state.showDashboard) ?
     (<div>
         <h1>User Dashboard</h1>

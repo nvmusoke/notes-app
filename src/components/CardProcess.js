@@ -44,7 +44,7 @@ class CardProcess extends Component {
   saveToDash(e){
     e.preventDefault();
 
-    const val=[this.state.note,this.state.category];
+    const val=[this.state.title,this.state.note,this.state.category];
     const userId = firebase.auth().currentUser.uid;
 
     console.log('savetoDash: ',val);
@@ -57,8 +57,7 @@ class CardProcess extends Component {
       title:this.state.title,
       note:this.state.note,
       category:this.state.category,
-      uid:userId,
-      title:this.state.title
+      uid:userId
     }).then(()=>
       {this.props.finished()}
     );
