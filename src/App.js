@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import Home from './components/Home';
-import GitHubLoginButton from './components/GitHubLoginButton';
-import GitHubLogoutButton from './components/GitHubLogoutButton';
+import LandingPage from './components/LandingPage';
+import LoginButton from './components/LoginButton';
+import LogoutButton from './components/LogoutButton';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 import { firebase } from './utils/firebase';
+import { hashHistory } from 'react-router';
 
 class App extends Component {
   constructor(props) {
@@ -12,12 +15,14 @@ class App extends Component {
       user: {}
     }
   }
-//AUTH KEY PROBLEM IN THE COMPONENTWILLMOUNT FUNCTION AND WELCOMEMESSAGE
+
   componentWillMount() {
+    console.log('App firebase: ',firebase);
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         console.log('Logged in:', user);
         this.setState({ user });
+        hashHistory.push('/dashboard');
       } else {
         console.log('failed to login');
         this.setState({ user: {} });
@@ -25,11 +30,16 @@ class App extends Component {
     });
   }
 
+  // sessionButton() {
+  //   if (!firebase.auth().currentUser) {
+  //     return <LoginButton>Log in with GitHub</LoginButton>;
+  //   } else {
+  //     return <LogoutButton>Logout { this.state.user.displayName }</LogoutButton>;
+  //   }
+  // }
   sessionButton() {
-    if (!firebase.auth().currentUser) {
-      return <GitHubLoginButton>Log in with GitHub</GitHubLoginButton>;
-    } else {
-      return <GitHubLogoutButton>Logout { this.state.user.displayName }</GitHubLogoutButton>;
+    if (firebase.auth().currentUser) {
+      return <LogoutButton>Logout { this.state.user.displayName }</LogoutButton>;
     }
   }
 
@@ -41,11 +51,13 @@ class App extends Component {
     return (
       <div className="container">
         {this.sessionButton() }
-        <h1>Notemon</h1>
+        <Header />
+        <h1>gistAlt</h1>
         { welcomeMessage }
         <div className="content">
-          { this.props.children || <Home /> }
+          { this.props.children || <LandingPage /> }
         </div>
+        <Footer />
       </div>
     );
   }

@@ -5,14 +5,16 @@ import dotenv from 'dotenv';
 dotenv.config({ silent:true });
 
 import App from './App';
-import Home from './components/Home';
+import LandingPage from './components/LandingPage';
+import Dashboard from './components/Dashboard';
 
 import './index.css';
 
 ReactDOM.render(
   <Router history={ hashHistory }>
     <Route path="/" component={ App }>
-      <IndexRoute component={ Home } />    
+      <IndexRoute component={ LandingPage } />
+      <Route path="/dashboard" component={ Dashboard } />
     </Route>
   </Router>,
   document.getElementById('root')
