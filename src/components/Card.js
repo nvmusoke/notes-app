@@ -4,7 +4,10 @@ import React, { Component } from 'react';
 class Card extends Component {
   render() {
     return (
-      <div>Hi! I'm a Card.</div>
+      <div>
+      <h2>{this.props.title}</h2>
+      <div>{this.props.note}</div>
+      </div>
     )
   }
 }

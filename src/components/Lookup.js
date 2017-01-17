@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import iFrame from './iFrame';
 import CardProcess from './CardProcess';
 
-}
+
 
 
 class Lookup extends Component {
