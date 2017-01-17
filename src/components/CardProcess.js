@@ -52,7 +52,8 @@ class CardProcess extends Component {
     .push({
       note:this.state.note,
       category:this.state.category,
-      uid:userId
+      uid:userId,
+      title:this.state.title
     }).then(()=>
       {this.props.finished()}
     );
@@ -65,7 +66,6 @@ class CardProcess extends Component {
         <CardForm onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)}/>
         <button className="btn">Save and Add Another</button>
         <button onClick={this.saveToDash.bind(this)} className="btn">Save and View Dashboard</button>
-
       </div>
     )
   }
