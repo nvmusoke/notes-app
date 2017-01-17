@@ -13,7 +13,8 @@ class CardProcess extends Component {
       title:'',
       note:'',
       category:'',
-      uid:''
+      uid:'',
+      showCategory:true
     }
   }
 
@@ -63,7 +64,6 @@ class CardProcess extends Component {
     const val=[this.state.note,this.state.category];
     const userId = firebase.auth().currentUser.uid;
     console.log('savetoDash: ',val);
-
     console.log('back to the fucking dashboard');
     firebase.database()
     .ref('/notes')
@@ -75,11 +75,20 @@ class CardProcess extends Component {
     });
   }
 
+  handleCategory(e){
+    e.preventDefault();
+    this.setState({
+      showCategory:false
+    });
+  }
   render() {
+    const html = (this.state.showCategory) ? (<SelectCategory onChoose={this.handleCategory.bind(this)}/>)
+      :
+      (<CardForm onButtonPush={this.saveToDash.bind(this)} onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)}/>)
+
     return (
       <div>Card Process
-        <SelectCategory onChoose={this.handleCategory.bind(this)}/>
-        <CardForm onButtonPush={this.saveToDash.bind(this)} onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)}/>
+        { html }
 
       </div>
     )
