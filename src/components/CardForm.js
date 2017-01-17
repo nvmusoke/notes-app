@@ -10,7 +10,8 @@ class CardForm extends Component {
   render() {
     return (
       <div className="container">
-        <textarea onKeyUp={this.handleKeyUp.bind(this)} name="name" ref="stringValue" maxlength="200" rows="8" cols="40" placeholder="What's this card about?"></textarea>
+        <textarea onKeyUp={this.handleKeyUp.bind(this)} name="name" ref="stringValue" maxLength="200" rows="2" cols="20" placeholder="Title"></textarea><br />
+        <textarea onKeyUp={this.handleKeyUp.bind(this)} name="name" ref="stringValue" maxLength="200" rows="8" cols="40" placeholder="What's this card about?"></textarea>
       </div>
     )
   }

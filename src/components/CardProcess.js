@@ -9,6 +9,7 @@ class CardProcess extends Component {
   constructor(props){
     super(props);
     this.state={
+      title:'',
       note:'',
       category:''
     }
@@ -18,29 +19,36 @@ class CardProcess extends Component {
     e.preventDefault();
     console.log('my fucking value: ',value);
     this.setState({
+      title:value,
       note:value
     });
   }
-  handleCategory(e,value){
+  handleCategory(e,category){
     e.preventDefault();
-    console.log('my fucking category: ',value);
+    console.log('my fucking category: ',category);
     this.setState({
-      category:value
+      category:category
     })
   }
   saveToDash(e){
     e.preventDefault();
-    const val=[this.state.note,this.state.category]
+    const val=[this.state.title, this.state.note, this.state.category]
+
     console.log('savetoDash: ',val);
     console.log('back to the fucking dashboard');
+
     firebase.database()
     .ref('/notes')
     .push({
-      note:this.state.note,
-      category:this.state.category
-    }).then(()=>
-      {this.props.finished()}
-    );
+      title: this.state.title,
+      note: this.state.note,
+      category:this.state.category,
+      created: (Math.floor(Date.now() / 1000 ))
+    }).then(data => {
+      this.props.finished();
+
+      hashHistory.push('/dashboard')
+    });
   }
 
   render() {

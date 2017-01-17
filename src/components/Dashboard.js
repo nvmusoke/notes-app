@@ -7,14 +7,13 @@ import CardProcess from './CardProcess';
 import { firebase } from '../utils/firebase';
 
 
-
-
 class Dashboard extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      showDashboard:true
+      showDashboard:true,
+      cards: []
     }
   }
 

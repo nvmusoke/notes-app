@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Card from './Card.js';
-
+import { firebase, firebaseListToArray } from '../utils/firebase';
 
 class Cards extends Component {
+
   render() {
     return (
         <div>Cards

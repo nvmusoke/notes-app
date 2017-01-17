@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class SelectCategory extends Component {
   handleSubmit(e){
     e.preventDefault();
-    const val=e.target.id;
+    const category=e.target.id;
     // console.log('val: ',val);
-    {this.props.onChoose(e,val)}
+    {this.props.onChoose(e,category)}
   }
   render() {
     return (
