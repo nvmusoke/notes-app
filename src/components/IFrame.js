@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-class IFrame extends Component {
+class iFrame extends Component {
+  componentDidMount(){
 
+  }
   render() {
     return (
-      <div className="container">
-        <iframe src="w3schools.com" />
-      </div>
+        <iframe src="http://www.w3schools.com"></iframe>
     );
   }
 }
 
-export default IFrame;
+export default iFrame;

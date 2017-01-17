@@ -20,7 +20,6 @@ class App extends Component {
     console.log('App firebase: ',firebase);
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        console.log('Logged in:', user);
         this.setState({ user });
         hashHistory.push('/dashboard');
       } else {

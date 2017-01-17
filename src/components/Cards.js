@@ -1,19 +1,43 @@
 import React, { Component } from 'react';
 import Card from './Card.js';
+import { firebase, firebaseListToArray } from '../utils/firebase';
 
 
 class Cards extends Component {
-  render() {
-    return (
-        <div>Cards
-          <section id="cards" className="container-fluid">
-            <div className="row">
-              <Card />
-            </div>
-          </section>
-        </div>
+  constructor(props){
+    super(props);
+    this.state = {
+      cards: []
+    }
+  }
+  componentWillMount(){
+    firebase.auth().onAuthStateChanged(user=>{
+      console.log('user ID in Cards is: ',user.uid);
+    });
+    firebase.database()
+    .ref('/notes')
+    .on('value', data => {
+      const cardData = firebaseListToArray(data.val());
+      console.log('Card data: ', cardData);
+      this.setState({
+        cards:cardData
+      });
+    });
+  }
 
-    );
+  render() {
+    const user = firebase.auth().currentUser;
+    const cards = this.state.cards.map(card=>{
+          if(card.uid===user.uid){
+            return <Card user={card.uid} title={card.title} note={card.note} />;
+          }
+        });
+        console.log('cards array: ',cards);
+        return (
+          <section id="cards" className="container-fluid">
+            { cards }
+          </section>
+        );
   }
 }
 

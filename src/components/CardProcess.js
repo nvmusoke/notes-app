@@ -6,21 +6,34 @@ import { firebase } from '../utils/firebase';
 
 
 class CardProcess extends Component {
+
   constructor(props){
     super(props);
     this.state={
+      title:'',
       note:'',
-      category:''
+      category:'',
+      uid:''
     }
+  }
+
+  handleTitleTyping(e,value){
+    e.preventDefault();
+    console.log('my fucking title value: ',value);
+    this.setState({
+      title:value
+    });
   }
 
   handleTyping(e,value){
     e.preventDefault();
     console.log('my fucking value: ',value);
     this.setState({
+      title:value,
       note:value
     });
   }
+
   handleCategory(e,value){
     e.preventDefault();
     console.log('my fucking category: ',value);
@@ -30,14 +43,39 @@ class CardProcess extends Component {
   }
   saveToDash(e){
     e.preventDefault();
-    const val=[this.state.note,this.state.category]
+
+    const val=[this.state.title,this.state.note,this.state.category];
+    const userId = firebase.auth().currentUser.uid;
+
     console.log('savetoDash: ',val);
+
+    console.log('back to the fucking dashboard');
+
+    firebase.database()
+    .ref('/notes')
+    .push({
+      title:this.state.title,
+      note:this.state.note,
+      category:this.state.category,
+      uid:userId
+    }).then(()=>
+      {this.props.finished()}
+    );
+  }
+  saveAndStay(e){
+    e.preventDefault();
+    const val=[this.state.note,this.state.category];
+    const userId = firebase.auth().currentUser.uid;
+    console.log('savetoDash: ',val);
+
     console.log('back to the fucking dashboard');
     firebase.database()
     .ref('/notes')
     .push({
       note:this.state.note,
-      category:this.state.category
+      category:this.state.category,
+      uid:userId,
+      title:this.state.title
     }).then(()=>
       {this.props.finished()}
     );
@@ -47,10 +85,9 @@ class CardProcess extends Component {
     return (
       <div>Card Process
         <SelectCategory onChoose={this.handleCategory.bind(this)}/>
-        <CardForm onType={this.handleTyping.bind(this)}/>
-        <button className="btn">Save and Add Another</button>
+        <CardForm onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)}/>
+        <button onClick={this.saveAndStay.bind(this)}  className="btn">Save and Add Another</button>
         <button onClick={this.saveToDash.bind(this)} className="btn">Save and View Dashboard</button>
-
       </div>
     )
   }
