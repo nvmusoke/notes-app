@@ -54,7 +54,9 @@ class CardProcess extends Component {
       category:this.state.category,
       uid:userId,
       title:this.state.title
-    });
+    }).then(()=>
+      {this.props.finished()}
+    );
   }
   saveAndStay(e){
     e.preventDefault();
@@ -70,18 +72,15 @@ class CardProcess extends Component {
       category:this.state.category,
       uid:userId,
       title:this.state.title
-    }).then(()=>
-      {this.props.finished()}
-    );
+    });
   }
 
   render() {
     return (
       <div>Card Process
         <SelectCategory onChoose={this.handleCategory.bind(this)}/>
-        <CardForm onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)}/>
-        <button onClick={this.saveAndStay.bind(this)}  className="btn">Save and Add Another</button>
-        <button onClick={this.saveToDash.bind(this)} className="btn">Save and View Dashboard</button>
+        <CardForm onButtonPush={this.saveToDash.bind(this)} onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)}/>
+
       </div>
     )
   }
