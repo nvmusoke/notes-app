@@ -46,6 +46,7 @@ class App extends Component {
         <div className="content">
           { this.props.children || <Home /> }
         </div>
+        <Footer />
       </div>
     );
   }
