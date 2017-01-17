@@ -30,10 +30,15 @@ class App extends Component {
     });
   }
 
+  // sessionButton() {
+  //   if (!firebase.auth().currentUser) {
+  //     return <LoginButton>Log in with GitHub</LoginButton>;
+  //   } else {
+  //     return <LogoutButton>Logout { this.state.user.displayName }</LogoutButton>;
+  //   }
+  // }
   sessionButton() {
-    if (!firebase.auth().currentUser) {
-      return <LoginButton>Log in with GitHub</LoginButton>;
-    } else {
+    if (firebase.auth().currentUser) {
       return <LogoutButton>Logout { this.state.user.displayName }</LogoutButton>;
     }
   }

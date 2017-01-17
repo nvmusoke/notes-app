@@ -5,10 +5,14 @@ import Card from './Card.js';
 class Cards extends Component {
   render() {
     return (
-      <div>
-        <div>Cards</div>
-      <Card />
-      </div>
+        <div>Cards
+          <section id="cards" className="container-fluid">
+            <div className="row">
+              <Card />
+            </div>
+          </section>
+        </div>
+
     );
   }
 }
