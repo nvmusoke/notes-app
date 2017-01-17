@@ -26,8 +26,11 @@ class Cards extends Component {
   }
 
   render() {
+    const user = firebase.auth().currentUser;
     const cards = this.state.cards.map(card=>{
-          return <Card key={this.key} user={card.uid} title={card.title} note={card.note} />;
+          if(card.uid===user.uid){
+            return <Card user={card.uid} title={card.title} note={card.note} />;
+          }
         });
         console.log('cards array: ',cards);
         return (

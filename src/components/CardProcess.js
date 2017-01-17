@@ -57,7 +57,26 @@ class CardProcess extends Component {
       title:this.state.title,
       note:this.state.note,
       category:this.state.category,
-      uid:userId
+      uid:userId,
+      title:this.state.title
+    }).then(()=>
+      {this.props.finished()}
+    );
+  }
+  saveAndStay(e){
+    e.preventDefault();
+    const val=[this.state.note,this.state.category];
+    const userId = firebase.auth().currentUser.uid;
+    console.log('savetoDash: ',val);
+
+    console.log('back to the fucking dashboard');
+    firebase.database()
+    .ref('/notes')
+    .push({
+      note:this.state.note,
+      category:this.state.category,
+      uid:userId,
+      title:this.state.title
     }).then(()=>
       {this.props.finished()}
     );
@@ -68,9 +87,8 @@ class CardProcess extends Component {
       <div>Card Process
         <SelectCategory onChoose={this.handleCategory.bind(this)}/>
         <CardForm onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)}/>
-        <button className="btn">Save and Add Another</button>
+        <button onClick={this.saveAndStay.bind(this)}  className="btn">Save and Add Another</button>
         <button onClick={this.saveToDash.bind(this)} className="btn">Save and View Dashboard</button>
-
       </div>
     )
   }
