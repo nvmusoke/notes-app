@@ -52,6 +52,8 @@ class Dashboard extends Component {
         <h1>User Dashboard</h1>
           <SearchBar />
           <AddCard clicked={this.handleClick.bind(this)} />
+          <Cards />
+
       </div>) : <CardProcess finished={this.restoreDash.bind(this)} />;
 
     return (
