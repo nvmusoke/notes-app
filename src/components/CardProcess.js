@@ -54,9 +54,7 @@ class CardProcess extends Component {
       category:this.state.category,
       uid:userId,
       title:this.state.title
-    }).then(()=>
-      
-    );
+    });
   }
   saveAndStay(e){
     e.preventDefault();
