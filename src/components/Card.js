@@ -5,8 +5,8 @@ class Card extends Component {
   render() {
     return (
       <div>
-        <h3>{ this.props.title }</h3>
-        <p>{ this.props.note }</p>
+        <h2>{this.props.title}</h2>
+        <div>{this.props.note}</div>
       </div>
     )
   }

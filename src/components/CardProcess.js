@@ -6,13 +6,23 @@ import { firebase } from '../utils/firebase';
 
 
 class CardProcess extends Component {
+
   constructor(props){
     super(props);
     this.state={
       title:'',
       note:'',
-      category:''
+      category:'',
+      uid:''
     }
+  }
+
+  handleTitleTyping(e,value){
+    e.preventDefault();
+    console.log('my fucking title value: ',value);
+    this.setState({
+      title:value
+    });
   }
 
   handleTyping(e,value){
@@ -23,7 +33,8 @@ class CardProcess extends Component {
       note:value
     });
   }
-  handleCategory(e,category){
+
+  handleCategory(e,value){
     e.preventDefault();
     console.log('my fucking category: ',category);
     this.setState({
@@ -32,30 +43,30 @@ class CardProcess extends Component {
   }
   saveToDash(e){
     e.preventDefault();
-    const val=[this.state.title, this.state.note, this.state.category]
+
+    const val=[this.state.note,this.state.category];
+    const userId = firebase.auth().currentUser.uid;
 
     console.log('savetoDash: ',val);
+
     console.log('back to the fucking dashboard');
 
     firebase.database()
     .ref('/notes')
     .push({
-      title: this.state.title,
-      note: this.state.note,
+      note:this.state.note,
       category:this.state.category,
-      created: (Math.floor(Date.now() / 1000 ))
-    }).then(data => {
-      this.props.finished();
-
-      hashHistory.push('/dashboard')
-    });
+      uid:userId
+    }).then(()=>
+      {this.props.finished()}
+    );
   }
 
   render() {
     return (
       <div>Card Process
         <SelectCategory onChoose={this.handleCategory.bind(this)}/>
-        <CardForm onType={this.handleTyping.bind(this)}/>
+        <CardForm onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)}/>
         <button className="btn">Save and Add Another</button>
         <button onClick={this.saveToDash.bind(this)} className="btn">Save and View Dashboard</button>
 

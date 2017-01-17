@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 import AddCard from './AddCard';
 import Cards from './Cards';
 import CardProcess from './CardProcess';
-import { firebase } from '../utils/firebase';
+import { firebase,firebaseListToArray } from '../utils/firebase';
 
 
 class Dashboard extends Component {
@@ -13,7 +13,7 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       showDashboard:true,
-      cards: []
+      cards:[]
     }
   }
 
@@ -22,10 +22,12 @@ class Dashboard extends Component {
       user => {
         if(user){
           console.log('logged in on Dashboard: ', user);
+          // console.log('user id: ',user.uid);
         }else{
           hashHistory.push('/');
         }
       });
+
   }
   handleClick(e){
     e.preventDefault();
@@ -41,12 +43,13 @@ class Dashboard extends Component {
   }
 
   render() {
+    const noteCards = this.state.cards;
     const html=(this.state.showDashboard) ?
     (<div>
         <h1>User Dashboard</h1>
           <SearchBar />
           <AddCard clicked={this.handleClick.bind(this)} />
-          <Cards />
+          <Cards/>
       </div>) : <CardProcess finished={this.restoreDash.bind(this)} />;
 
     return (
