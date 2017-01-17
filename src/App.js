@@ -29,13 +29,6 @@ class App extends Component {
     });
   }
 
-  // sessionButton() {
-  //   if (!firebase.auth().currentUser) {
-  //     return <LoginButton>Log in with GitHub</LoginButton>;
-  //   } else {
-  //     return <LogoutButton>Logout { this.state.user.displayName }</LogoutButton>;
-  //   }
-  // }
   sessionButton() {
     if (firebase.auth().currentUser) {
       return <LogoutButton>Logout { this.state.user.displayName }</LogoutButton>;
@@ -46,7 +39,7 @@ class App extends Component {
     const welcomeMessage = (firebase.auth().currentUser) ?
       <h4>Hi { this.state.user.displayName }!</h4> :
       '';
-
+      
     return (
       <div className="container">
         {this.sessionButton() }
@@ -54,7 +47,7 @@ class App extends Component {
         <h1>gistAlt</h1>
         { welcomeMessage }
         <div className="content">
-          { this.props.children || <LandingPage /> }
+        { this.props.children || <LandingPage /> }
         </div>
         <Footer />
       </div>

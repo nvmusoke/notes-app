@@ -45,13 +45,12 @@ class Dashboard extends Component {
   }
 
   render() {
-    const noteCards = this.state.cards;
     const html=(this.state.showDashboard) ?
     (<div>
         <h1>User Dashboard</h1>
           <SearchBar />
           <AddCard clicked={this.handleClick.bind(this)} />
-          <Cards/>
+          <Cards />
       </div>) : <CardProcess finished={this.restoreDash.bind(this)} />;
 
     return (

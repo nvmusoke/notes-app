@@ -55,7 +55,7 @@ class CardProcess extends Component {
       uid:userId,
       title:this.state.title
     }).then(()=>
-      {this.props.finished()}
+      
     );
   }
   saveAndStay(e){
