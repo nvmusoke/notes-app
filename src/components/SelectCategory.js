@@ -11,15 +11,15 @@ class SelectCategory extends Component {
     return (
       <div className="container">
         <button id="resources" onClick={this.handleSubmit.bind(this)} className="btn">Resources</button>
-        <button className="btn">HTML</button>
-        <button className="btn">CSS</button>
-        <button className="btn">JavaScript</button>
-        <button className="btn">Frontend Frameworks</button>
-        <button className="btn">Backend Frameworks</button>
-        <button className="btn">Git | GitHub</button>
-        <button className="btn">Design | UX | UI</button>
-        <button className="btn">Other</button>
-        <button className="btn">Code</button>
+        <button id="html" onClick={this.handleSubmit.bind(this)} className="btn">HTML</button>
+        <button id="css" onClick={this.handleSubmit.bind(this)} className="btn">CSS</button>
+        <button id="javascript" onClick={this.handleSubmit.bind(this)} className="btn">JavaScript</button>
+        <button id="frontend_frameworks" onClick={this.handleSubmit.bind(this)} className="btn">Frontend Frameworks</button>
+        <button id="backend_frameworks" onClick={this.handleSubmit.bind(this)} className="btn">Backend Frameworks</button>
+        <button id="git" onClick={this.handleSubmit.bind(this)} className="btn">Git | GitHub</button>
+        <button id="design" onClick={this.handleSubmit.bind(this)} className="btn">Design | UX | UI</button>
+        <button id="other" onClick={this.handleSubmit.bind(this)} className="btn">Other</button>
+        <button id="code" onClick={this.handleSubmit.bind(this)} className="btn">Code</button>
       </div>
     );
   }
