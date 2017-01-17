@@ -27,7 +27,7 @@ class Cards extends Component {
 
   render() {
     const cards = this.state.cards.map(card=>{
-          return <Card user={card.uid} title={card.title} note={card.note} />;
+          return <Card key={this.key} user={card.uid} title={card.title} note={card.note} />;
         });
         console.log('cards array: ',cards);
         return (

@@ -36,9 +36,9 @@ class CardProcess extends Component {
 
   handleCategory(e,value){
     e.preventDefault();
-    console.log('my fucking category: ',category);
+    console.log('my fucking category: ',value);
     this.setState({
-      category:category
+      category:value
     })
   }
   saveToDash(e){
@@ -54,6 +54,7 @@ class CardProcess extends Component {
     firebase.database()
     .ref('/notes')
     .push({
+      title:this.state.title,
       note:this.state.note,
       category:this.state.category,
       uid:userId
