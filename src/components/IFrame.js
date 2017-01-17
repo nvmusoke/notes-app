@@ -4,7 +4,9 @@ class IFrame extends Component {
 
   render() {
     return (
-      <h4>iFrame</h4>
+      <div className="container">
+        <iframe src="w3schools.com" />
+      </div>
     );
   }
 }

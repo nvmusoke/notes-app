@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 class Footer extends Component {
   render() {
-    return (
-    )
+    return <div>Footer</div>;
+    
   }
 }
 
