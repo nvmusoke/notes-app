@@ -19,6 +19,7 @@ class CardForm extends Component {
         <textarea onKeyUp={this.handleKeyUp.bind(this)} name="name" ref="stringValue" rows="8" cols="40" placeholder="What's this card about?"></textarea>
         <button onClick={this.props.onStayButtonPush} className="btn">Save and Add Another</button>
         <button onClick={this.props.onButtonPush} className="btn">Save and View Dashboard</button>
+
       </div>
     )
   }

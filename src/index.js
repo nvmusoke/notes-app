@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import dotenv from 'dotenv';
+
 dotenv.config({ silent:true });
 import Lookup from './components/Lookup';
 

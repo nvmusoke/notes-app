@@ -16,6 +16,7 @@ class Card extends Component {
     return (
       <div className="card panel panel-default">
         <button onClick={this.handleClick.bind(this)}>X</button>
+
         <h2>{this.props.title}</h2>
         <div>{this.props.note}</div>
       </div>
