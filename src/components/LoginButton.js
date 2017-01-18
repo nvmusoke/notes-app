@@ -12,9 +12,11 @@ class LoginButton extends Component {
 
   render() {
     return (
+      <div className="login-btn">
       <button onClick={ this.handleClick.bind(this) }
         className="btn">{ this.props.children }
       </button>
+      </div>
     )
   }
 }
