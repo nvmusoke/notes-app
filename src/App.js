@@ -40,6 +40,11 @@ class App extends Component {
   }
 
   render() {
+
+    const welcomeMessage = (firebase.auth().currentUser) ?
+      <h4>Hi { this.state.user.displayName }!</h4> :
+      '';
+
     return (
       <div>
 
