@@ -79,10 +79,12 @@ class CardProcess extends Component {
     });
   }
 
-  handleCategory(e){
+  handleCategory(e,val){
     e.preventDefault();
     this.setState({
+
       showCategory:false
+      category:val
 
 
     });
@@ -92,6 +94,7 @@ class CardProcess extends Component {
     e.preventDefault();
     this.setState({
       showDashboard:this.props.finished()
+
     });
   }
   render() {
