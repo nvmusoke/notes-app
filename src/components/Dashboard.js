@@ -9,6 +9,7 @@ import SearchBar from './SearchBar';
 import AddCard from './AddCard';
 import Cards from './Cards';
 import CardProcess from './CardProcess';
+import CardView from './CardView';
 
 
 
@@ -54,6 +55,11 @@ class Dashboard extends Component {
       show:'card'
     });
   }
+  cancelCardView(){
+    this.setState({
+      show:'dashboard'
+    });
+  }
 
   render() {
     let dashState = this.state.show;
@@ -61,7 +67,7 @@ class Dashboard extends Component {
     switch (dashState){
       case 'card':
         html =   (<div>
-              showing card
+              <CardView onCancel={this.cancelCardView.bind(this)}/>
             </div>);
         break;
       case 'cardprocess' :

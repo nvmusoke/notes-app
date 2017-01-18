@@ -11,6 +11,13 @@ class CardView extends Component {
       firebase.database().ref('/notes').child(id).remove();
     }
   }
+  viewEdit(){
+
+  }
+
+  updateCard(){
+
+  }
 
   render() {
     return (
@@ -19,6 +26,11 @@ class CardView extends Component {
 
         <h2>{this.props.title}</h2>
         <div>{this.props.note}</div>
+        <input type="text"></input>
+        <textarea />
+        <button onClick={this.props.onCancel} className="btn">Cancel</button>
+        <button onEdit={this.viewEdit.bind(this)} className="btn">Edit</button>
+        <button onSave={this.updateCard.bind(this)} className="btn">Save</button>
       </div>
     )
   }
