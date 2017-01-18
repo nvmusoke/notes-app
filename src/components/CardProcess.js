@@ -83,7 +83,7 @@ class CardProcess extends Component {
     e.preventDefault();
     this.setState({
 
-      showCategory:false
+      showCategory:false,
       category:val
 
 
@@ -103,12 +103,8 @@ class CardProcess extends Component {
       (<CardForm onButtonPush={this.saveToDash.bind(this)} onStayButtonPush={this.saveAndStay.bind(this)} onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)} onCancelPush={this.handleCancel.bind(this)}/>)
 
     return (
-<<<<<<< HEAD
       <div>
-=======
-      <div>Card Process
 
->>>>>>> 57372665bafee592cfff82e6423d38208d07ad4d
         { html }
 
       </div>
