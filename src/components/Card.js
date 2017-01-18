@@ -18,6 +18,7 @@ class Card extends Component {
         <button onClick={this.handleClick.bind(this)}>X</button>
 
         <h2>{this.props.title}</h2>
+
       </div>
     )
   }

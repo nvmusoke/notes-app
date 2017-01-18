@@ -5,11 +5,14 @@ import dotenv from 'dotenv';
 
 dotenv.config({ silent:true });
 
+import Lookup from './components/Lookup';
 import App from './App';
 import LandingPage from './components/LandingPage';
 import Lookup from './components/Lookup';
 import Dashboard from './components/Dashboard';
-import About from './components/About';
+
+import About from './components/About'
+
 
 
 
