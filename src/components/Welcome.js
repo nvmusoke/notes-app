@@ -4,9 +4,9 @@ class Welcome extends Component {
 
   render() {
     return (
-      <div>
-        <h4>Welcome!</h4>
-        <h4>New to gestAlt? Sign up!</h4>
+      <div className="welcome-message">
+        <h4>gistAlt helps you package useful information into easily usable cards.<br></br><br></br> Login to begin!</h4>
+
       </div>
     );
   }

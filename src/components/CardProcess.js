@@ -13,7 +13,8 @@ class CardProcess extends Component {
       title:'',
       note:'',
       category:'',
-      uid:''
+      uid:'',
+      showCategory:true
     }
   }
 
@@ -67,29 +68,33 @@ class CardProcess extends Component {
     const val=[this.state.note,this.state.category];
     const userId = firebase.auth().currentUser.uid;
     console.log('savetoDash: ',val);
-
     console.log('back to the fucking dashboard');
     firebase.database()
     .ref('/notes')
     .push({
-      title:this.state.title,
       note:this.state.note,
       category:this.state.category,
-      uid:userId
-    })
+      uid:userId,
+      title:this.state.title
+    });
   }
 
+  handleCategory(e){
+    e.preventDefault();
+    this.setState({
+      showCategory:false
+    });
+  }
   render() {
+    const html = (this.state.showCategory) ? (<SelectCategory onChoose={this.handleCategory.bind(this)}/>)
+      :
+      (<CardForm onButtonPush={this.saveToDash.bind(this)} onStayButtonPush={this.saveAndStay.bind(this)} onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)}/>)
+
     return (
       <div>Card Process
-        <SelectCategory onChoose={this.handleCategory.bind(this)} />
-        <CardForm
-          onButtonPush={this.saveToDash.bind(this)}
-          onTitleType={this.handleTitleTyping.bind(this)}
-          onType={this.handleTyping.bind(this)}
-         />
-        <button onClick={this.saveAndStay.bind(this)}  className="btn">Save and Add Another</button>
-        <button onClick={this.saveToDash.bind(this)} className="btn">Save and View Dashboard</button>
+
+        { html }
+
       </div>
     )
   }

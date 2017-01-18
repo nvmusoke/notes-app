@@ -10,7 +10,7 @@ import App from './App';
 import LandingPage from './components/LandingPage';
 import Dashboard from './components/Dashboard';
 
-import './index.css';
+
 
 ReactDOM.render(
   <Router history={ hashHistory }>

@@ -4,7 +4,11 @@ class Header extends Component {
 
   render() {
     return (
-      <h4>{ this.props.title }</h4>
+      <header>
+
+     <h1>gistAlt</h1>
+
+    </header>
     );
   }
 }
