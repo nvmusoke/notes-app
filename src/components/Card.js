@@ -14,11 +14,10 @@ class Card extends Component {
 
   render() {
     return (
-      <div className="card panel panel-default">
+      <div id={this.props.category} className="card panel panel-default">
         <button onClick={this.handleClick.bind(this)}>X</button>
 
         <h2>{this.props.title}</h2>
-        <div>{this.props.note}</div>
 
       </div>
     )

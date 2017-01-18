@@ -79,19 +79,11 @@ class CardProcess extends Component {
     });
   }
 
-  handleCategory(e){
+  handleCategory(e,val){
     e.preventDefault();
     this.setState({
-      showCategory:false
-
-
-    });
-  }
-
-  handleCancel(e){
-    e.preventDefault();
-    this.setState({
-      showDashboard:this.props.finished()
+      showCategory:false,
+      category:val
     });
   }
   render() {
