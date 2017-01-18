@@ -13,8 +13,8 @@ class LandingPage extends Component {
   render() {
     return (
 
-      <div className="container">
-      
+      <div className="landingpage-container">
+
 
         <Welcome />
         <LoginButton>Log in with GitHub</LoginButton>
