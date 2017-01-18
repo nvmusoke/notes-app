@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { hashHistory } from 'react-router';
 import { firebase } from '../utils/firebase';
 
+import Nav from './Nav';
 import Lookup from './Lookup';
 import SearchBar from './SearchBar';
 import AddCard from './AddCard';
@@ -57,7 +58,12 @@ class Dashboard extends Component {
       </div>) : <CardProcess finished={this.restoreDash.bind(this)} />;
 
     return (
-      <div>{ html }</div>
+      <div>
+
+      <Nav />
+      { html }
+
+      </div>
     );
   }
 }
