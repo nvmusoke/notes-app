@@ -32,7 +32,15 @@ class CardForm extends Component {
             placeholder="Add your note...">
           </textarea>
         </div>
+
       <div class="submit-btns">
+        <button
+          onClick={this.props.onCancelPush}
+          className="btn btn-primary submit">
+          Cancel
+        </button>
+
+
         <button
           onClick={this.props.onStayButtonPush}
           className="btn btn-primary submit">

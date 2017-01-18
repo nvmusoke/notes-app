@@ -3,8 +3,6 @@ import iFrame from './IFrame';
 import CardProcess from './CardProcess';
 
 
-
-
 class Lookup extends Component {
   render() {
     return (

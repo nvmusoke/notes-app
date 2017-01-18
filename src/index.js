@@ -9,6 +9,7 @@ import Lookup from './components/Lookup';
 import App from './App';
 import LandingPage from './components/LandingPage';
 import Dashboard from './components/Dashboard';
+import About from './components/About'
 
 
 
@@ -18,6 +19,7 @@ ReactDOM.render(
       <IndexRoute component={ LandingPage } />
       <Route path="/dashboard" component={ Dashboard } />
       <Route path="/lookup" component={ Lookup } />
+      <Route path="/about" component={ About } />
     </Route>
   </Router>,
   document.getElementById('root')
