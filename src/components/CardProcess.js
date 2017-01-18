@@ -27,9 +27,8 @@ class CardProcess extends Component {
 
   handleTyping(e,value){
     e.preventDefault();
-    console.log('my fucking value: ',value);
+    console.log('my fucking note value: ',value);
     this.setState({
-      title:value,
       note:value
     });
   }
@@ -73,18 +72,22 @@ class CardProcess extends Component {
     firebase.database()
     .ref('/notes')
     .push({
+      title:this.state.title,
       note:this.state.note,
       category:this.state.category,
-      uid:userId,
-      title:this.state.title
+      uid:userId
     })
   }
 
   render() {
     return (
       <div>Card Process
-        <SelectCategory onChoose={this.handleCategory.bind(this)}/>
-        <CardForm onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)}/>
+        <SelectCategory onChoose={this.handleCategory.bind(this)} />
+        <CardForm
+          onButtonPush={this.saveToDash.bind(this)}
+          onTitleType={this.handleTitleTyping.bind(this)}
+          onType={this.handleTyping.bind(this)}
+         />
         <button onClick={this.saveAndStay.bind(this)}  className="btn">Save and Add Another</button>
         <button onClick={this.saveToDash.bind(this)} className="btn">Save and View Dashboard</button>
       </div>
