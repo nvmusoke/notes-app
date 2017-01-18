@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import iFrame from './iFrame';
+import iFrame from './IFrame';
 import CardProcess from './CardProcess';
 
 
