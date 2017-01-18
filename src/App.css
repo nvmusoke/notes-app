@@ -3,7 +3,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 /*Header Component styles*/
 header {
   background-color: #282C34;
@@ -40,16 +39,30 @@ nav {
   box-shadow: 0 3px 3px grey;
 
 }
-ul{
+.nav-ul{
   margin: 0 auto;
 
 }
-li{
+.nav-li{
   display: inline;
   margin-left: 20px;
   font-family: 'Work Sans', sans-serif;
   font-weight: 900;
 }
+.navlink{
+  list-style: none;
+  text-decoration: none;
+  color: #498b9f;
+}
+.navlink:hover{
+  text-decoration: none;
+  color: #fff;
+}
+.navlink:focus{
+  text-decoration: none;
+    color: #fff;
+}
+
 
 /*Header Component styles*/
 
