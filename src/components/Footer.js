@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
 
+
 class Footer extends Component {
   render() {
-    return <div>Footer</div>;
-    
+    return (
+      <footer class="col-md-8 col-md-offset-2">
+        <p>Made with <span>&hearts;</span> by us!</p>
+      </footer>
+    )
   }
 }
 

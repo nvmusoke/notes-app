@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+
 import LandingPage from './components/LandingPage';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import Header from './components/Header';
+import Nav from './components/Nav';
 import Footer from './components/Footer';
+
+import './App.css';
 
 import { firebase } from './utils/firebase';
 import { hashHistory } from 'react-router';
@@ -36,17 +40,21 @@ class App extends Component {
   }
 
   render() {
+
     const welcomeMessage = (firebase.auth().currentUser) ?
       <h4>Hi { this.state.user.displayName }!</h4> :
       '';
+
     return (
-      <div className="container">
-        {this.sessionButton() }
+      <div>
+
         <Header />
-        <h1>gistAlt</h1>
-        { welcomeMessage }
+
+
+
         <div className="content">
         { this.props.children || <LandingPage /> }
+        { this.sessionButton() }
         </div>
         <Footer />
       </div>
