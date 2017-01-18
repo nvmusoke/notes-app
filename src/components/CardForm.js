@@ -15,6 +15,7 @@ class CardForm extends Component {
   render() {
     return (
       <div className="container">
+
         <div className="input-info">
           <input
             className="input-title"
