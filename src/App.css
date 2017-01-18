@@ -1,10 +1,8 @@
-
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 /*Header Component styles*/
 header {
   background-color: #282C34;
@@ -54,6 +52,7 @@ nav {
 .navlink{
   list-style: none;
   text-decoration: none;
+  color: #498b9f;
 }
 .navlink:hover{
   text-decoration: none;
@@ -61,10 +60,9 @@ nav {
 }
 .navlink:focus{
   text-decoration: none;
+    color: #fff;
 }
-.active:focus {
-  text-decoration: none;
-}
+
 
 /*Header Component styles*/
 
