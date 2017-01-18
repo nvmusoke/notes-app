@@ -52,6 +52,10 @@ li{
   font-family: 'Work Sans', sans-serif;
   font-weight: 900;
 }
+.navlink{
+  list-style: none;
+  text-decoration: none;
+}
 
 /*Header Component styles*/
 

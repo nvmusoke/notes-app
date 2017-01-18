@@ -83,7 +83,7 @@ class CardProcess extends Component {
     e.preventDefault();
     this.setState({
 
-      showCategory:false
+      showCategory:false,
       category:val
 
 
