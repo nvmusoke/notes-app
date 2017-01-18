@@ -1,0 +1,149 @@
+/*IFrame component styles*/
+
+.container{
+padding-top: 20px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+div{
+  margin-top: 20px;
+}
+
+/* End IFrame component styles*/
+
+
+/*SelectCategory component styles*/
+
+.row{
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.btn{
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+   border: none;
+   margin: 0 10px;
+   box-shadow: 2px 2px 5px grey;
+   padding: 10px 15px
+}
+
+.btn.active.focus, .btn.active:focus,
+.btn.focus, .btn:active.focus,
+.btn:active:focus, .btn:focus {
+      outline: none;
+}
+
+.resources{
+background-color: #ecf0f1;
+color: #000;
+}
+.html{
+  background-color: #c0392b;
+}
+.html::selection  {
+  background-color: #c0392b;
+}
+.css{
+  background-color: #e67e22;
+}
+.javascript{
+  background-color: #f1c40f;
+}
+.frontend{
+  background-color: #2ecc71;
+}
+.backend{
+  background-color: #0c7a7a;
+}
+.git{
+  background-color: #2980b9;
+}
+.design{
+  background-color: #7a2f99;
+}
+.other{
+  background-color:#646869;
+}
+.code{
+  background-color: #000;
+}
+
+/* End SelectCategory component styles*/
+
+/* CardCreate component styles*/
+
+div{
+  margin-top: 20px;
+}
+.input-info{
+  background: #231e1e;
+  border-color: black;
+  border-radius: 7px;
+  color: white;
+  padding: 1.7rem;
+  min-height: 30rem;
+  position: relative;
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+  font-family: 'Merriweather', serif;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.form{
+  border-radius: 5px 5px;
+}
+.card-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  margin-bottom: -1;
+  background-color: none;
+
+}
+
+.input-title{
+  width: 100%;
+  background:rgba(0,0,0,0);
+  border: none;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+}
+.input-note{
+  margin-top: 0;
+  border: none;
+  width: 100%;
+  padding-bottom: 5px;
+  background:rgba(0,0,0,0);
+  font-family: 'Merriweather', serif;
+}
+.submit-btns{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.submit{
+  background-color: #a5acac;
+}
+
+.btn{
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+   border: none;
+   margin: 0 10px;
+   box-shadow: 2px 2px 5px grey;
+   padding: 10px 15px
+}
+.btn.active.focus, .btn.active:focus,
+.btn.focus, .btn:active.focus,
+.btn:active:focus, .btn:focus {
+      outline: none;
+}
+
+/* End CardCreate component styles*/

@@ -88,6 +88,7 @@ font-size: 16px;
 border-bottom: 1px solid white;
 padding-bottom: 5px;
 }
+
 .row {
   margin: 0;
 }
@@ -111,80 +112,9 @@ span {
   color: red;
 }
 
-/*nav.tabs {
-  max-width: 55%;
-}
-nav.tabs a {
-  display: inline-block;
-  color: black;
-  background-color: white;
-  padding: 4px 20px;
-  margin-bottom: 24px;
-  margin-right: 1px;
-}
-nav.tabs a.active {
-  background-color: black;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}*/
-
 .question-input {
   width: 50%;
   padding: 6px 9px;
-}
-
-/*.btn, .btn-primary {
-  background-color: black;
-  border: none;
-  margin-left: 20px;
-}*/
-
-.one {
-  background-color: #f5f5f5;
-  color: #000;
-}
-
-.two {
-  background-color: #c0392b;
-  color: #fff;
-}
-
-.three {
-  background-color: #e67e22;
-  color: #fff;
-}
-
-
-.four {
-  background-color: #f1c40f;
-  color: #fff;
-}
-
-.five {
-  background-color: #2ecc71;
-  color: #fff;
-}
-
-.six{
-  background-color: #0c7a7a;
-  color: #fff;
-}
-.seven {
-  background-color: #2980b9;
-  color: #fff;
-}
-.eight {
-  background-color: #7a2f99;
-  color: #fff;
-}
-.nine {
-  background-color: #646869;
-  color: #fff;
-}
-.ten {
-  background-color: #282C34;
-  color: #fff;
 }
 
 /*Welcome component styling*/
