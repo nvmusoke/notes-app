@@ -48,6 +48,12 @@ class Dashboard extends Component {
       show:'dashboard'
     });
   }
+  handleChoose(){
+    console.log('handling choose');
+    this.setState({
+      show:'card'
+    });
+  }
 
   render() {
     let dashState = this.state.show;
@@ -59,14 +65,14 @@ class Dashboard extends Component {
             </div>);
         break;
       case 'cardprocess' :
-        html = <CardProcess />;
+        html = <CardProcess finished={this.restoreDash.bind(this)} />;
         break;
       case 'dashboard':
         html=(<div>
               <h1>User Dashboard</h1>
                 <SearchBar />
                 <AddCard clicked={this.handleClick.bind(this)} />
-                <Cards />
+                <Cards onChoose={this.handleChoose.bind(this)}/>
             </div>);
         break;
       default:
@@ -74,7 +80,7 @@ class Dashboard extends Component {
               <h1>User Dashboard</h1>
                 <SearchBar />
                 <AddCard clicked={this.handleClick.bind(this)} />
-                <Cards />
+                <Cards onChoose={this.handleChoose.bind(this)}/>
             </div>);
 
     }
