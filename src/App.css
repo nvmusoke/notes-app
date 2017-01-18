@@ -41,11 +41,11 @@ nav {
   box-shadow: 0 3px 3px grey;
 
 }
-ul{
+.nav-ul{
   margin: 0 auto;
 
 }
-li{
+.nav-li{
   display: inline;
   margin-left: 20px;
   font-family: 'Work Sans', sans-serif;
@@ -53,6 +53,16 @@ li{
 }
 .navlink{
   list-style: none;
+  text-decoration: none;
+}
+.navlink:hover{
+  text-decoration: none;
+  color: #fff;
+}
+.navlink:focus{
+  text-decoration: none;
+}
+.active:focus {
   text-decoration: none;
 }
 
