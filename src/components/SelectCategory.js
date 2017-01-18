@@ -10,16 +10,26 @@ class SelectCategory extends Component {
   render() {
     return (
       <div className="container">
-        <button id="resources" onClick={this.handleSubmit.bind(this)} className="btn">Resources</button>
-        <button id="html" onClick={this.handleSubmit.bind(this)} className="btn">HTML</button>
-        <button id="css" onClick={this.handleSubmit.bind(this)} className="btn">CSS</button>
-        <button id="javascript" onClick={this.handleSubmit.bind(this)} className="btn">JavaScript</button>
-        <button id="frontend_frameworks" onClick={this.handleSubmit.bind(this)} className="btn">Frontend Frameworks</button>
-        <button id="backend_frameworks" onClick={this.handleSubmit.bind(this)} className="btn">Backend Frameworks</button>
-        <button id="git" onClick={this.handleSubmit.bind(this)} className="btn">Git | GitHub</button>
-        <button id="design" onClick={this.handleSubmit.bind(this)} className="btn">Design | UX | UI</button>
-        <button id="other" onClick={this.handleSubmit.bind(this)} className="btn">Other</button>
-        <button id="code" onClick={this.handleSubmit.bind(this)} className="btn">Code</button>
+
+        <div className="row">
+          <button id="resources" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>Resources</button>
+        </div>
+        <div className="row">
+          <button id="html" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>HTML</button>
+          <button id="css" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>CSS</button>
+          <button id="javascript" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>JavaScript</button>
+          <button id="frontend_frameworks" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>Frontend Frameworks</button>
+        </div>
+        <div className="row">
+          <button id="backend_frameworks" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>Backend Frameworks</button>
+          <button id="git" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>Git | GitHub</button>
+          <button id="design" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>Design | UX</button>
+          <button id="other" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>Other</button>
+        </div>
+        <div className="row">
+          <button id="code" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>Code</button>
+        </div>
+        
       </div>
     );
   }

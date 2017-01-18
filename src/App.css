@@ -5,15 +5,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/*Header Component styles*/
 header {
   background-color: #282C34;
   margin-top:  0;
   padding-top: 30px;
   padding-bottom: 30px;
   width: 100%;
+}
+
+header h1 {
+  margin: 0 30px 0;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: -2px;
+  max-width: 100px;
+  font-family: 'Work Sans', sans-serif;
+  color: white;
+  font-size: 8rem;
 
 }
 
+/*Landing Page Component styles*/
+
+.landingpage-container {
+  margin: 20px 20px;
+}
+
+/*Nav Component styles*/
 nav {
   border-radius: 0;
   background-color: rgba(40,44,52, 0.8);
@@ -34,21 +53,10 @@ li{
   font-weight: 900;
 }
 
-h1 {
-  margin: 0 30px 0;
-  text-align: center;
-  font-weight: bold;
-  letter-spacing: -2px;
-  max-width: 100px;
-  font-family: 'Work Sans', sans-serif;
-  color: white;
-  font-size: 8rem;
+/*Header Component styles*/
 
-}
+/*Card Component styles*/
 
-.deck{
-  margin-top: 20px;
-}
 .card {
   background: #231e1e;
   border-color: black;
@@ -62,7 +70,6 @@ h1 {
   margin-bottom: 1.5rem;
   font-family: 'Merriweather', serif;
   box-shadow: 3px 3px 3px grey;
-
 }
 
 .card h4 {
@@ -90,18 +97,17 @@ border-bottom: 1px solid white;
 padding-bottom: 5px;
 }
 
-.row {
-  margin: 0;
-}
+/*Footer component styling*/
 
 footer {
   text-align: center;
   margin-top: 5rem;
 }
-footer .heart {
+span {
   color:#cf2e31;
 }
 
+/*Used in About.js, Footer.js and Instructions.js*/
 p {
   font-size: 2.5rem;
   line-height: 150%;
@@ -109,16 +115,8 @@ p {
   padding-bottom: 10px;
 }
 
-span {
-  color: red;
-}
+/*Welcome component styles*/
 
-.question-input {
-  width: 50%;
-  padding: 6px 9px;
-}
-
-/*Welcome component styling*/
 .welcome-message {
   display: flex;
   text-align: center;
@@ -129,9 +127,78 @@ span {
   font-weight: bold;
 }
 
-/*LoginButton component styling*/
+/*LoginButton component styles*/
 
 .login-btn {
   display: flex;
   justify-content: center;
+}
+
+/*IFrame component styles*/
+
+.container{
+margin-top: 20px;
+padding-top: 20px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+/*SelectCategory component styles*/
+
+.row{
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.btn{
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+   border: none;
+   margin: 0 10px;
+   box-shadow: 2px 2px 5px grey;
+   padding: 10px 15px
+}
+
+.btn.active.focus, .btn.active:focus,
+.btn.focus, .btn:active.focus,
+.btn:active:focus, .btn:focus {
+      outline: none;
+}
+
+#resources{
+background-color: #ecf0f1;
+color: #000;
+}
+#html{
+  background-color: #c0392b;
+}
+#html::selection  {
+  background-color: #c0392b;
+}
+#css{
+  background-color: #e67e22;
+}
+#javascript{
+  background-color: #f1c40f;
+}
+#frontend_frameworks{
+  background-color: #2ecc71;
+}
+#backend_frameworks{
+  background-color: #0c7a7a;
+}
+#git{
+  background-color: #2980b9;
+}
+#design{
+  background-color: #7a2f99;
+}
+#other{
+  background-color:#646869;
+}
+#code{
+  background-color: #000;
 }

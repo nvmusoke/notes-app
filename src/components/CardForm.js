@@ -30,21 +30,22 @@ class CardForm extends Component {
         />
 >>>>>>> f6a25cb2fb946c6c686497d92efc934a3688994e
 
-        <input
-          className="input-title"
-          type="text" name="title"
-          placeholder="Title" value=""
-        />
+        <div className="input-info">
+          <input
+            className="input-title"
+            type="text" name="title"
+            placeholder="Title" value=""
+          />
 
-        <textarea
-          className="input-note"
-          onKeyUp={this.handleKeyUp.bind(this)}
-          ref="stringValue"
-          name="description"
-          maxLength="200" rows="8" cols="80"
-          placeholder="Add your note...">
-        </textarea>
-
+          <textarea
+            className="input-note"
+            onKeyUp={this.handleKeyUp.bind(this)}
+            ref="stringValue"
+            name="description"
+            maxLength="200" rows="8" cols="80"
+            placeholder="Add your note...">
+          </textarea>
+        </div>
       <div class="submit-btns">
         <button
           onClick={this.props.onStayButtonPush}
@@ -58,7 +59,7 @@ class CardForm extends Component {
           Save and View Dashboard
         </button>
       </div>
-      
+
       </div>
     )
   }
