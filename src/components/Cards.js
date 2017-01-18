@@ -25,11 +25,15 @@ class Cards extends Component {
     });
   }
 
+  handleClick(e){
+
+  }
+
   render() {
     const user = firebase.auth().currentUser;
     const cards = this.state.cards.map(card=>{
           if(card.uid===user.uid){
-            return <Card category={card.category} user={card.uid} title={card.title} note={card.note} cardId={card.id}/>;
+            return <Card onClick={this.handleClick.bind(this)} category={card.category} user={card.uid} title={card.title} note={card.note} cardId={card.id}/>;
           }
         });
         console.log('cards array: ',cards);
