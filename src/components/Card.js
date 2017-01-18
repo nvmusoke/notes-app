@@ -5,9 +5,11 @@ import { firebase,firebaseListToArray } from '../utils/firebase';
 class Card extends Component {
   handleClick(e){
     console.log('note: ',this.props.cardId);
-    var id='/notes'+this.props.cardId;
-    let db = firebase.database().ref('/notes');
-    console.log('db: ',db);
+    var id=this.props.cardId;
+    if(confirm('are you sure'))
+    {
+      firebase.database().ref('/notes').child(id).remove();
+    }
   }
 
   render() {
