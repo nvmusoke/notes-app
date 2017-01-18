@@ -10,7 +10,7 @@ class CardView extends Component {
     {
       firebase.database().ref('/notes').child(id).remove();
     }
-  }
+  } 
   viewEdit(){
 
   }
