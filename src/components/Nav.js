@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavLink from './NavLink';
 
 class Header extends Component {
 
@@ -6,10 +7,10 @@ class Header extends Component {
     return (
       <nav>
       <ul>
-        <li>Dashboard</li>
-        <li>Lookup</li>
-        <li>About</li>
-        
+        <li><NavLink to="/dashboard" onlyActiveOnIndex>Dashboard</NavLink></li>
+        <li><NavLink to="/lookup" onlyActiveOnIndex>Lookup</NavLink></li>
+        <li><NavLink to="/about" onlyActiveOnIndex>About</NavLink></li>
+
       </ul>
     </nav>
     );

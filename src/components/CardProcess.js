@@ -30,7 +30,6 @@ class CardProcess extends Component {
     e.preventDefault();
     console.log('my fucking value: ',value);
     this.setState({
-      title:value,
       note:value
     });
   }
@@ -58,8 +57,7 @@ class CardProcess extends Component {
       title:this.state.title,
       note:this.state.note,
       category:this.state.category,
-      uid:userId,
-      title:this.state.title
+      uid:userId
     }).then(()=>
       {this.props.finished()}
     );

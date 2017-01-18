@@ -49,9 +49,7 @@ class App extends Component {
       <div>
 
         <Header />
-
-
-
+        <Nav />
         <div className="content">
         { this.props.children || <LandingPage /> }
         { this.sessionButton() }

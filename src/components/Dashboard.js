@@ -60,7 +60,6 @@ class Dashboard extends Component {
     return (
       <div>
 
-      <Nav />
       { html }
 
       </div>
