@@ -84,6 +84,15 @@ class CardProcess extends Component {
     this.setState({
       showCategory:false,
       category:val
+
+    });
+  }
+
+  handleCancel(e){
+    e.preventDefault();
+    this.setState({
+      showDashboard:this.props.finished()
+
     });
   }
   render() {
