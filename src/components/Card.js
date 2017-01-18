@@ -19,6 +19,7 @@ class Card extends Component {
 
         <h2>{this.props.title}</h2>
         <div>{this.props.note}</div>
+
       </div>
     )
   }
