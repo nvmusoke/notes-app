@@ -16,20 +16,13 @@ class CardForm extends Component {
     return (
       <div className="container">
 
-        <input
-          className="btn btn-primary submit"
-          onKeyUp={this.handleTitleKeyUp.bind(this)}
-          ref="titleValue"
-          type="text" placeholder="Title"
-        />
-
         <div className="input-info">
           <input
             className="input-title"
-            type="text" name="title"
-            placeholder="Title" value=""
+            onKeyUp={this.handleTitleKeyUp.bind(this)}
+            ref="titleValue"
+            type="text" placeholder="Title"
           />
-
           <textarea
             className="input-note"
             onKeyUp={this.handleKeyUp.bind(this)}
