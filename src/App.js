@@ -52,7 +52,7 @@ class App extends Component {
         <Nav user={this.state.user}/>
         <div className="content">
         { this.props.children || <LandingPage /> }
-        { this.sessionButton() }
+        
         </div>
         <Footer />
       </div>

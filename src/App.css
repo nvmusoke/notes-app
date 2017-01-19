@@ -50,9 +50,19 @@ header h1 {
   justify-content: space-around;
   text-align: center;
 }
-.instructions-img {
+.instructions-img-login {
   width: 40%;
   height: 40%;
+  margin: 15px 0;
+}
+.instructions-img-create {
+  width: 40%;
+  height: 40%;
+  margin: 15px 0;
+}
+.instructions-img-view {
+  width: 125px;
+  height: 60px;
   margin: 15px 0;
 }
 
@@ -132,7 +142,7 @@ nav {
 
 #cards {
   display: flex;
-  justify-content: space-around;;
+  justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 20px 20px;
@@ -149,7 +159,8 @@ nav {
   height: 300px;
   position: relative;
   width: 250px;
-  margin-bottom: 1.5rem;
+  /*margin-bottom: 1.5rem;*/
+  margin: 1rem 1rem;
   font-family: 'Work Sans', sans-serif;
   box-shadow: 3px 3px 3px grey;
 }
@@ -329,6 +340,38 @@ color: #000;
   outline: none;
   resize: none
 }
+
+/*Card View Component*/
+.card-view{
+  border: none;
+  margin: 0 auto;
+
+}
+.card-edit{
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 10px;
+  padding: 1.7rem;
+  min-height: 30rem;
+  position: relative;
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+  border-radius: 7px;
+  box-shadow: 5px 5px 5px grey;
+}
+.card-view-btns{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+.card-view-x-btn{
+  background: none;
+  border: none;
+
+}
+
 /*LogoutButton Component Styles*/
 
 .logout-div {
