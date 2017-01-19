@@ -9,7 +9,7 @@ class Lookup extends Component {
 
   render() {
     return (
-      <div>
+      <div className="flexcontainer-parent">
         <iFrame />
         <CardProcess />
       </div>
