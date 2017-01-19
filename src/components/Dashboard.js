@@ -73,20 +73,22 @@ class Dashboard extends Component {
         html = <CardProcess finished={this.restoreDash.bind(this)} />;
         break;
       case 'dashboard':
-        html=(<div>
-
+        html=(<div><div className="dashboard-options">
                 <SearchBar />
                 <AddCard clicked={this.handleClick.bind(this)} />
+              </div>
+              <div>
                 <Cards onChoose={this.handleChoose.bind(this)}/>
-            </div>);
+              </div></div>);
         break;
       default:
-        html = (<div>
-              
+        html =(<div><div className="dashboard-options">
                 <SearchBar />
                 <AddCard clicked={this.handleClick.bind(this)} />
+              </div>
+              <div>
                 <Cards onChoose={this.handleChoose.bind(this)}/>
-            </div>);
+              </div></div>);
 
     }
     // const html=(this.state.showDashboard) ?

@@ -84,10 +84,17 @@ nav {
   text-decoration: none;
     color: #fff;
 }
+/*Dashboard Component Styles*/
 
+.dashboard-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /*SearchBar Component Styles*/
 .search-dashboard {
   text-align: center;
+  margin: 20px 0;
 }
 .search {
   width: 300px;
@@ -111,14 +118,26 @@ nav {
   border-radius: 7px;
   color: white;
   padding: 1.7rem;
-  min-height: 30rem;
-  max-height: 30rem;
+  height: 300px;
   position: relative;
-  min-width: 300px;
-  max-width: 300px;
+  width: 250px;
   margin-bottom: 1.5rem;
-  font-family: 'Merriweather', serif;
+  font-family: 'Work Sans', sans-serif;
   box-shadow: 3px 3px 3px grey;
+}
+.delete-card {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 180px;
+  margin-top: 10px;
+
 }
 
 /*Footer component styling*/
@@ -190,6 +209,7 @@ width: 60%;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 30px 0;
 }
 .row{
   margin: 10px auto;
