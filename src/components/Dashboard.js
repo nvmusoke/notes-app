@@ -8,6 +8,7 @@ import Lookup from './Lookup';
 import SearchBar from './SearchBar';
 import AddCard from './AddCard';
 import Cards from './Cards';
+import Cards2 from './Cards2';
 import CardProcess from './CardProcess';
 import CardView from './CardView';
 

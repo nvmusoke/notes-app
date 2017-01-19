@@ -93,7 +93,6 @@ class CardProcess extends Component {
   handleCancel(e){
     e.preventDefault();
     this.props.finished();
-
   }
 
   render() {
