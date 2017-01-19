@@ -5,9 +5,24 @@ class Instructions extends Component {
   render() {
     return (
       <div>
-        <h4>Instructions</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        </p>
+        <div className="instructions-title">
+          <h4>How it Works</h4>
+        </div>
+        <div className="instructions-container">
+          <div className="card">
+            <img className="instructions-img" src={require("../../public/images/create.png")} />
+            <p>Login with GitHub so we can save cards to your unique collection!</p>
+          </div>
+          <div className="card">
+            <img className="instructions-img" src={require("../../public/images/create.png")} />
+            <p>Create a card directly in your dashboard or go to the Lookup page
+                to search for info before creating.</p>
+          </div>
+          <div className="card">
+            <img className="instructions-img" src={require("../../public/images/create.png")} />
+            <p>Cards are viewable and searchable at any time via the dashboard.</p>
+          </div>
+        </div>
       </div>
     );
   }

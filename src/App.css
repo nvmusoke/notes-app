@@ -11,7 +11,6 @@ header {
 }
 
 header img {
-  /*animation: infinite 20s linear;*/
   width: 70px;
   height: 70px;
   margin-left: 60px;
@@ -32,6 +31,34 @@ header h1 {
 
 .landingpage-container {
   margin: 20px 20px;
+}
+
+/*Instructions Component styles*/
+
+.instructions-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.instructions-title h4 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 36px;
+}
+.instructions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+.instructions-img {
+  width: 40%;
+  height: 40%;
+  margin: 15px 0;
+}
+
+.instructions-container p {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
 }
 
 /*Nav Component styles*/
@@ -89,23 +116,9 @@ nav {
 
 .dashboard-options {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.dashboard-selectors{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-/*.addcard{
-  color: #fff;
-  font-family: 'Work Sans', sans-serif;
-  font-weight: bold;
-  border: none;
-  margin: 0 10px;
-  box-shadow: 2px 2px 5px grey;
-}*/
 /*SearchBar Component Styles*/
 .search-dashboard {
   text-align: center;
@@ -119,7 +132,7 @@ nav {
 
 #cards {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 20px 20px;
@@ -136,8 +149,7 @@ nav {
   height: 300px;
   position: relative;
   width: 250px;
-  /*margin-bottom: 1.5rem;*/
-  margin: 1rem 1rem;
+  margin-bottom: 1.5rem;
   font-family: 'Work Sans', sans-serif;
   box-shadow: 3px 3px 3px grey;
 }
@@ -220,8 +232,6 @@ p {
 .iframe{
 margin-top: 20px;
 padding-top: 20px;
-
-/*width: 60%;*/
 
 }
 
@@ -318,36 +328,6 @@ color: #000;
   border: none;
   outline: none;
   resize: none
-}
-/*Card View Component*/
-.card-view{
-  border: none;
-  margin: 0 auto;
-
-}
-.card-edit{
-  margin: 0 auto;
-  font-size: 18px;
-  line-height: 1.5em;
-  font-family: 'Open Sans', sans-serif;
-  margin-top: 10px;
-  padding: 1.7rem;
-  min-height: 30rem;
-  position: relative;
-  max-width: 300px;
-  margin-bottom: 1.5rem;
-  border-radius: 7px;
-  box-shadow: 5px 5px 5px grey;
-}
-.card-view-btns{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5%;
-}
-.card-view-x-btn{
-  background: none;
-  border: none;
-
 }
 /*LogoutButton Component Styles*/
 
