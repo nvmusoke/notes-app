@@ -193,8 +193,11 @@ footer {
   height: 50px;
   margin-top: 5rem;
 }
-span {
+.heart {
   color:#cf2e31;
+}
+.coffee {
+  color: #a54e0b;
 }
 
 /*Used in About.js, Footer.js and Instructions.js*/
