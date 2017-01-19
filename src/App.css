@@ -349,16 +349,14 @@ color: #000;
   outline: none;
   resize: none
 }
-<<<<<<< HEAD
 
-=======
 .submit-btns{
   display: block;
 }
 .submit{
   margin: 2%;
 }
->>>>>>> fa45617477f3facf72ae866cc7e04810c527f3d9
+
 /*Card View Component*/
 .card-view{
   border: none;
