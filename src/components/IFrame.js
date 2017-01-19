@@ -8,7 +8,7 @@ class iFrame extends Component {
     return (
 
       <div className="container">
-      <Iframe url="http://www.w3schools.com"  />
+      <Iframe src="http://www.w3schools.com"  />
       </div>
 
 
