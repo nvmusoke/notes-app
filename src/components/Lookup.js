@@ -12,7 +12,7 @@ class Lookup extends Component {
       <div className="flexcontainer-parent">
       <iframe
           className="embed-responsive-item"
-          src={ embedUrl } width="100%" height="100%"></iframe>
+          src={ embedUrl } width="100%" height="500px"></iframe>
       <CardProcess />
       </div>
     )
