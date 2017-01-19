@@ -305,6 +305,11 @@ color: #000;
 }
 /*Card View Component*/
 .card-view{
+  border: none;
+  margin: 0 auto;
+
+}
+.card-edit{
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.5em;
@@ -315,7 +320,18 @@ color: #000;
   position: relative;
   max-width: 300px;
   margin-bottom: 1.5rem;
+  border-radius: 7px;
   box-shadow: 5px 5px 5px grey;
+}
+.card-view-btns{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+.card-view-x-btn{
+  background: none;
+  border: none;
+  
 }
 /*LogoutButton Component Styles*/
 

@@ -36,7 +36,7 @@ class CardView extends Component {
   handleClick(e){
     console.log('note: ',this.props.cardId);
     var id=this.props.cardId;
-    if(confirm('are you sure'))
+    if(confirm('Are you sure you want to delete this?'))
     {
       firebase.database().ref('/notes').child(id).remove();
     }
@@ -87,7 +87,8 @@ class CardView extends Component {
 
     return (
       <div className="card-view panel panel-default">
-        <button onClick={this.handleClick.bind(this)}>X</button>
+      <div className="card-edit">
+        <button className="card-view-x-btn" onClick={this.handleClick.bind(this)}>X</button>
         <h2>{ this.state.title }</h2>
         <div>{ this.state.text }</div>
         {this.state.edit}
@@ -97,13 +98,14 @@ class CardView extends Component {
               <input ref="cardTitle" onKeyUp={this.editTitle.bind(this)} type="text"/>
               <textarea ref="cardText" onKeyUp={this.editText.bind(this)}>{this.state.text}</textarea>
             </div>
+
+          </form>
+          </div>
+          <div className="card-view-btns">
           <button type="button" onClick={this.props.onCancel} className="btn">Cancel</button>
           <button className={this.state.hideEdit ? 'hidden' : 'btn' } type="button"  onClick={this.handleEdit.bind(this)}>Edit</button>
           <input type="submit" className={ this.state.hideFields ? 'hidden' : 'btn' } value="Save"/>
-          </form>
-
-
-
+          </div>
       </div>
     )
   }
