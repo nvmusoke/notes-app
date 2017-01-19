@@ -116,6 +116,9 @@ nav {
   text-decoration: none;
   color: #2ecc71;
 }
+#logout{
+margin-left: 60%;
+}
 /*.navlink-dashboard:active, .navlink-lookup:active, .navlink-about:active {
   text-decoration: none;
   color: #fff;
