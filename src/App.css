@@ -274,7 +274,31 @@ color: #000;
 #code{
   background-color: #000;
 }
-
+/*Card Form Component Styles*/
+.input-info{
+  font-size: 18px;
+  line-height: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 10px;
+  padding: 1.7rem;
+  min-height: 30rem;
+  position: relative;
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+  box-shadow: 5px 5px 5px grey;
+}
+.input-title{
+  width: 280px;
+  height: 30px;
+  background:rgba(0,0,0,0);
+  border: none;
+}
+.input-note{
+  width: 280px;
+  height: 200px;
+  background:rgba(0,0,0,0);
+  border: none;
+}
 /*LogoutButton Component Styles*/
 
 .logout-div {
