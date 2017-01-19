@@ -20,7 +20,8 @@ class Dashboard extends Component {
       showDashboard:true,
       showCardProcess:false,
       showCardView:false,
-      cards:[]
+      show:'',
+      cardNum:''
     }
   }
 
@@ -28,7 +29,6 @@ class Dashboard extends Component {
     firebase.auth().onAuthStateChanged(
       user => {
         if(user){
-          console.log('logged in on Dashboard: ', user);
           // console.log('user id: ',user.uid);
         }else{
           hashHistory.push('/');
@@ -38,7 +38,6 @@ class Dashboard extends Component {
   }
   handleClick(e){
     e.preventDefault();
-    console.log('click handled!');
     this.setState({
       show:'cardprocess'
     });
@@ -48,16 +47,26 @@ class Dashboard extends Component {
       show:'dashboard'
     });
   }
-  handleChoose(){
-    console.log('handling choose');
+  handleChoose(cards,thisCardId){
+    console.log('thiscardid: ',thisCardId);
+    // console.log('cards passed up:',cards);
     this.setState({
-      show:'card'
+      show:'card',
+      cardNum:thisCardId
     });
   }
   cancelCardView(){
+    console.log('cancelCardView');
     this.setState({
       show:'dashboard'
     });
+  }
+  cutRouting(){
+    console.log('setting state to dashboard');
+    var dash = ()=>this.setState({
+      show:'dashboard'
+    })
+    window.setTimeout(dash,50);
   }
 
   render() {
@@ -66,7 +75,7 @@ class Dashboard extends Component {
     switch (dashState){
       case 'card':
         html =   (<div>
-              <CardView onCancel={this.cancelCardView.bind(this)}/>
+              <CardView cardNo={this.state.cardNum} onCancel={this.cancelCardView.bind(this)}/>
             </div>);
         break;
       case 'cardprocess' :
@@ -76,19 +85,18 @@ class Dashboard extends Component {
         html=(<div><div className="dashboard-options">
                 <SearchBar />
                 <AddCard clicked={this.handleClick.bind(this)} />
-              </div>
-              <div>
-                <Cards onChoose={this.handleChoose.bind(this)}/>
-              </div></div>);
+
+                <Cards doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
+            </div>);
+
         break;
       default:
         html =(<div><div className="dashboard-options">
                 <SearchBar />
                 <AddCard clicked={this.handleClick.bind(this)} />
-              </div>
-              <div>
-                <Cards onChoose={this.handleChoose.bind(this)}/>
-              </div></div>);
+                <Cards onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
+            </div>);
+
 
     }
     // const html=(this.state.showDashboard) ?
