@@ -6,7 +6,7 @@ class Card extends Component {
   handleClick(e){
     console.log('note: ',this.props.cardId);
     var id=this.props.cardId;
-    if(confirm('are you sure'))
+    if(confirm('Are you sure you want to delete this?'))
     {
       firebase.database().ref('/notes').child(id).remove();
     }
