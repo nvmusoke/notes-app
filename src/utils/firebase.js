@@ -8,7 +8,6 @@ const config = {
   messagingSenderId: process.env.REACT_APP_FB_MESSAGING_SENDER_ID
 };
 
-console.log('key: ',process.env.REACT_APP_FB_API_KEY);
 
 // Firebase instance
 firebase.initializeApp(config);
