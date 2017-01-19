@@ -6,11 +6,11 @@ class CardView extends Component {
   handleClick(e){
     console.log('note: ',this.props.cardId);
     var id=this.props.cardId;
-    if(confirm('are you sure'))
+    if(confirm('Are you sure?'))
     {
       firebase.database().ref('/notes').child(id).remove();
     }
-  } 
+  }
   viewEdit(){
 
   }
@@ -24,8 +24,8 @@ class CardView extends Component {
       <div className="card-view panel panel-default">
         <button onClick={this.handleClick.bind(this)}>X</button>
 
-        <h2>{this.props.title}</h2>
-        <div>{this.props.note}</div>
+        <h2 className="input-title">{this.props.title}</h2>
+        <div className="input-note">{this.props.note}</div>
         <input type="text"></input>
         <textarea />
         <button onClick={this.props.onCancel} className="btn">Cancel</button>
