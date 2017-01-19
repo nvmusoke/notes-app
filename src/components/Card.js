@@ -10,11 +10,12 @@ class Card extends Component {
     {
       firebase.database().ref('/notes').child(id).remove();
     }
+    {this.props.noRoute()}
   }
 
   onPick(){
-    console.log('handlepick');
-    {this.props.onTap()}
+    let cardNum = this.props.cardId;
+    {this.props.onTap(cardNum)}
   }
 
   render() {

@@ -162,6 +162,7 @@ p {
 }
 
 /*Welcome component styles*/
+
 .hero  {
   text-align: center;
 }
@@ -172,7 +173,7 @@ p {
   display: flex;
   text-align: center;
   justify-content: center;
-  padding: 70px 0;
+  padding: 50px 0 30px;
 }
 .welcome-message h4 {
   font-family: 'Merriweather', serif;
@@ -204,7 +205,7 @@ p {
 margin-top: 20px;
 padding-top: 20px;
 
-width: 60%;
+/*width: 60%;*/
 
 }
 
@@ -292,12 +293,15 @@ color: #000;
   height: 30px;
   background:rgba(0,0,0,0);
   border: none;
+  outline: none;
 }
 .input-note{
   width: 280px;
   height: 200px;
   background:rgba(0,0,0,0);
   border: none;
+  outline: none;
+  resize: none
 }
 /*Card View Component*/
 .card-view{

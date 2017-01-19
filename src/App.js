@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import LandingPage from './components/LandingPage';
-import LoginButton from './components/LoginButton';
+// import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import Header from './components/Header';
 import Nav from './components/Nav';
