@@ -4,9 +4,13 @@ class Welcome extends Component {
 
   render() {
     return (
-      <div className="welcome-message">
-        <h4>Ending the madness one card at a time<br></br><br></br> Login to begin!</h4>
-
+      <div>
+        <div className="hero">
+          <img src={require("../../public/images/stairs.png")} />
+        </div>
+        <div className="welcome-message">
+          <h4>Ending the madness... one step at a time</h4>
+        </div>
       </div>
     );
   }
