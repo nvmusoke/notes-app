@@ -36,14 +36,11 @@ class CardView extends Component {
   handleClick(e){
     console.log('note: ',this.props.cardId);
     var id=this.props.cardId;
-    if(confirm('Are you sure?'))
+    if(confirm('are you sure'))
     {
       firebase.database().ref('/notes').child(id).remove();
     }
   }
-<<<<<<< HEAD
-  viewEdit(){
-=======
   handleEdit(){
     console.log('handle edit');
     var id=this.props.cardId;
@@ -55,7 +52,6 @@ class CardView extends Component {
       hideEdit:true
     });
   }
->>>>>>> 7441fa3142b3cbcbe0b3e3792663b067c890ecb6
 
   editTitle(e){
     this.setState({
@@ -108,16 +104,6 @@ class CardView extends Component {
 
 
 
-<<<<<<< HEAD
-        <h2 className="input-title">{this.props.title}</h2>
-        <div className="input-note">{this.props.note}</div>
-        <input type="text"></input>
-        <textarea />
-        <button onClick={this.props.onCancel} className="btn">Cancel</button>
-        <button onEdit={this.viewEdit.bind(this)} className="btn">Edit</button>
-        <button onSave={this.updateCard.bind(this)} className="btn">Save</button>
-=======
->>>>>>> 7441fa3142b3cbcbe0b3e3792663b067c890ecb6
       </div>
     )
   }
