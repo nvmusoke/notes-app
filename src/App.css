@@ -212,9 +212,7 @@ p {
   align-items: center;
   justify-content: center;
 
-
 }
-
 /*IFrame component styles*/
 
 .iframe{
@@ -292,6 +290,12 @@ color: #000;
   background-color: #000;
 }
 /*Card Form Component Styles*/
+.cardform{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .input-info{
   font-size: 18px;
   line-height: 1.5em;
@@ -318,6 +322,12 @@ color: #000;
   border: none;
   outline: none;
   resize: none
+}
+.submit-btns{
+  display: block;
+}
+.submit{
+  margin: 2%;
 }
 /*Card View Component*/
 .card-view{
