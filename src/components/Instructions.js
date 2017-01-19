@@ -10,7 +10,7 @@ class Instructions extends Component {
         </div>
         <div className="instructions-container">
           <div className="card">
-            <img className="instructions-img-login" src={require("../../public/images/create.png")} />
+            <img className="instructions-img-login" src={require("../../public/images/login.png")} />
             <p>Login with GitHub so we can save cards to your unique collection!</p>
           </div>
           <div className="card">

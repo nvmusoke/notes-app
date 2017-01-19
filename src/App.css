@@ -51,8 +51,8 @@ header h1 {
   text-align: center;
 }
 .instructions-img-login {
-  width: 40%;
-  height: 40%;
+  width: 68px;
+  height: 116px;
   margin: 15px 0;
 }
 .instructions-img-create {
@@ -344,16 +344,14 @@ color: #000;
   outline: none;
   resize: none
 }
-<<<<<<< HEAD
 
-=======
 .submit-btns{
   display: block;
 }
 .submit{
   margin: 2%;
 }
->>>>>>> fa45617477f3facf72ae866cc7e04810c527f3d9
+
 /*Card View Component*/
 .card-view{
   border: none;
