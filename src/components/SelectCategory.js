@@ -9,7 +9,7 @@ class SelectCategory extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="flexcontainer">
 
         <div className="row">
           <button id="resources" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>Resources</button>
@@ -29,7 +29,7 @@ class SelectCategory extends Component {
         <div className="row">
           <button id="code" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>Code</button>
         </div>
-        
+
       </div>
     );
   }

@@ -9,6 +9,7 @@ import SearchBar from './SearchBar';
 import AddCard from './AddCard';
 import Cards from './Cards';
 import CardProcess from './CardProcess';
+import CardView from './CardView';
 
 
 class Dashboard extends Component {
@@ -17,7 +18,10 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       showDashboard:true,
-      cards:[]
+      showCardProcess:false,
+      showCardView:false,
+      show:'',
+      cardNum:''
     }
   }
 
@@ -25,7 +29,6 @@ class Dashboard extends Component {
     firebase.auth().onAuthStateChanged(
       user => {
         if(user){
-          console.log('logged in on Dashboard: ', user);
           // console.log('user id: ',user.uid);
         }else{
           hashHistory.push('/');
@@ -35,26 +38,74 @@ class Dashboard extends Component {
   }
   handleClick(e){
     e.preventDefault();
-    console.log('click handled!');
     this.setState({
-      showDashboard:false
+      show:'cardprocess'
     });
   }
   restoreDash(){
     this.setState({
-      showDashboard:true
+      show:'dashboard'
     });
+  }
+  handleChoose(cards,thisCardId){
+    console.log('thiscardid: ',thisCardId);
+    // console.log('cards passed up:',cards);
+    this.setState({
+      show:'card',
+      cardNum:thisCardId
+    });
+  }
+  cancelCardView(){
+    console.log('cancelCardView');
+    this.setState({
+      show:'dashboard'
+    });
+  }
+  cutRouting(){
+    console.log('setting state to dashboard');
+    var dash = ()=>this.setState({
+      show:'dashboard'
+    })
+    window.setTimeout(dash,50);
   }
 
   render() {
-    const html=(this.state.showDashboard) ?
-    (<div>
-        <h1>User Dashboard</h1>
-          <SearchBar />
-          <AddCard clicked={this.handleClick.bind(this)} />
-          <Cards />
+    let dashState = this.state.show;
+    let html = '';
+    switch (dashState){
+      case 'card':
+        html =   (<div>
+              <CardView cardNo={this.state.cardNum} onCancel={this.cancelCardView.bind(this)}/>
+            </div>);
+        break;
+      case 'cardprocess' :
+        html = <CardProcess finished={this.restoreDash.bind(this)} />;
+        break;
+      case 'dashboard':
+        html=(<div><div className="dashboard-options">
+                <SearchBar />
+                <AddCard clicked={this.handleClick.bind(this)} />
 
-      </div>) : <CardProcess finished={this.restoreDash.bind(this)} />;
+                <Cards doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
+            </div>);
+
+        break;
+      default:
+        html =(<div><div className="dashboard-options">
+                <SearchBar />
+                <AddCard clicked={this.handleClick.bind(this)} />
+                <Cards onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
+            </div>);
+
+
+    }
+    // const html=(this.state.showDashboard) ?
+    // (<div>
+    //     <h1>User Dashboard</h1>
+    //       <SearchBar />
+    //       <AddCard clicked={this.handleClick.bind(this)} />
+    //       <Cards />
+    //   </div>) : '';
 
     return (
       <div>

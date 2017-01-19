@@ -10,12 +10,18 @@ class Card extends Component {
     {
       firebase.database().ref('/notes').child(id).remove();
     }
+    {this.props.noRoute()}
+  }
+
+  onPick(){
+    let cardNum = this.props.cardId;
+    {this.props.onTap(cardNum)}
   }
 
   render() {
     return (
-      <div id={this.props.category} className="card panel panel-default">
-        <button onClick={this.handleClick.bind(this)}>X</button>
+      <div className="card" onClick={this.onPick.bind(this)} id={this.props.category} >
+        <button className="delete-card" onClick={this.handleClick.bind(this)}>X</button>
 
         <h2>{this.props.title}</h2>
 

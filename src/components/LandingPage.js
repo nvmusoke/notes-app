@@ -17,9 +17,9 @@ class LandingPage extends Component {
 
 
         <Welcome />
-        <LoginButton>Log in with GitHub</LoginButton>
+        <LoginButton>Login</LoginButton>
         <Instructions />
-        <LoginButton>Log in with GitHub</LoginButton>
+        <LoginButton>Login</LoginButton>
 
       </div>
     );
