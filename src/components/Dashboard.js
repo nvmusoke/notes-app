@@ -87,7 +87,9 @@ class Dashboard extends Component {
                 <AddCard clicked={this.handleClick.bind(this)} />
 
                 <Cards doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
-            </div>);
+            </div>
+            </div>
+          );
 
         break;
       default:
@@ -95,18 +97,12 @@ class Dashboard extends Component {
                 <SearchBar />
                 <AddCard clicked={this.handleClick.bind(this)} />
                 <Cards onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
-            </div>);
+            </div>
+          </div>
+        );
 
 
     }
-    // const html=(this.state.showDashboard) ?
-    // (<div>
-    //     <h1>User Dashboard</h1>
-    //       <SearchBar />
-    //       <AddCard clicked={this.handleClick.bind(this)} />
-    //       <Cards />
-    //   </div>) : '';
-
     return (
       <div>
 
