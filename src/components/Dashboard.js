@@ -69,6 +69,15 @@ class Dashboard extends Component {
     window.setTimeout(dash,50);
   }
 
+  searchTermChanged(e){
+    this.search(e.target.value);
+  }
+
+  search(term){
+    // firebase.refs('/notes')
+    // .
+  }
+
   render() {
     let dashState = this.state.show;
     let html = '';
@@ -83,26 +92,26 @@ class Dashboard extends Component {
         break;
       case 'dashboard':
         html=(<div><div className="dashboard-options">
-                <SearchBar />
+                <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)} />
                 <AddCard clicked={this.handleClick.bind(this)} />
 
                 <Cards doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
+
             </div>
 
           </div>);
         break;
       default:
         html =(<div><div className="dashboard-options">
-                <SearchBar />
+                <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)}/>
                 <AddCard clicked={this.handleClick.bind(this)} />
                 <Cards onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
+
             </div>
 
           </div>);
 
-
     }
-
 
 
     return (
