@@ -12,10 +12,15 @@ class Card extends Component {
     }
   }
 
+  onPick(){
+    console.log('handlepick');
+    {this.props.onTap()}
+  }
+
   render() {
     return (
-      <div id={this.props.category} className="card panel panel-default">
-        <button onClick={this.handleClick.bind(this)}>X</button>
+      <div className="card" onClick={this.onPick.bind(this)} id={this.props.category} >
+        <button className="delete-card" onClick={this.handleClick.bind(this)}>X</button>
 
         <h2>{this.props.title}</h2>
 

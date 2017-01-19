@@ -9,6 +9,7 @@ import SearchBar from './SearchBar';
 import AddCard from './AddCard';
 import Cards from './Cards';
 import CardProcess from './CardProcess';
+import CardView from './CardView';
 
 
 class Dashboard extends Component {
@@ -17,6 +18,8 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       showDashboard:true,
+      showCardProcess:false,
+      showCardView:false,
       cards:[]
     }
   }
@@ -37,24 +40,64 @@ class Dashboard extends Component {
     e.preventDefault();
     console.log('click handled!');
     this.setState({
-      showDashboard:false
+      show:'cardprocess'
     });
   }
   restoreDash(){
     this.setState({
-      showDashboard:true
+      show:'dashboard'
+    });
+  }
+  handleChoose(){
+    console.log('handling choose');
+    this.setState({
+      show:'card'
+    });
+  }
+  cancelCardView(){
+    this.setState({
+      show:'dashboard'
     });
   }
 
   render() {
-    const html=(this.state.showDashboard) ?
-    (<div>
-        <h1>User Dashboard</h1>
-          <SearchBar />
-          <AddCard clicked={this.handleClick.bind(this)} />
-          <Cards />
+    let dashState = this.state.show;
+    let html = '';
+    switch (dashState){
+      case 'card':
+        html =   (<div>
+              <CardView onCancel={this.cancelCardView.bind(this)}/>
+            </div>);
+        break;
+      case 'cardprocess' :
+        html = <CardProcess finished={this.restoreDash.bind(this)} />;
+        break;
+      case 'dashboard':
+        html=(<div><div className="dashboard-options">
+                <SearchBar />
+                <AddCard clicked={this.handleClick.bind(this)} />
+              </div>
+              <div>
+                <Cards onChoose={this.handleChoose.bind(this)}/>
+              </div></div>);
+        break;
+      default:
+        html =(<div><div className="dashboard-options">
+                <SearchBar />
+                <AddCard clicked={this.handleClick.bind(this)} />
+              </div>
+              <div>
+                <Cards onChoose={this.handleChoose.bind(this)}/>
+              </div></div>);
 
-      </div>) : <CardProcess finished={this.restoreDash.bind(this)} />;
+    }
+    // const html=(this.state.showDashboard) ?
+    // (<div>
+    //     <h1>User Dashboard</h1>
+    //       <SearchBar />
+    //       <AddCard clicked={this.handleClick.bind(this)} />
+    //       <Cards />
+    //   </div>) : '';
 
     return (
       <div>
