@@ -6,10 +6,11 @@ class iFrame extends Component {
     return (
 
       <div className="iframe">
-        <iframe src="http://www.w3schools.com" height="700px" />
+        <iFrame src="//cdn.iframe.ly/embed.js" async height="700px" width="800px"/>
       </div>
     )
   }
 }
+
 
 export default iFrame;
