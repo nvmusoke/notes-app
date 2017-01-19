@@ -159,9 +159,12 @@ class Dashboard extends Component {
           </div>);
         break;
       default:
-        html =(<div><div className="dashboard-options">
-                <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)}/>
-                <AddCard clicked={this.handleClick.bind(this)} />
+        html =(<div className="dashboard-options">
+                <div>
+                  <div className="dashboard-selectors">
+                    <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)}/>
+                    <AddCard clicked={this.handleClick.bind(this)} />
+                    </div>
                 <Cards onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
 
             </div>

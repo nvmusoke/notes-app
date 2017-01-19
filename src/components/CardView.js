@@ -88,6 +88,7 @@ class CardView extends Component {
 
     return (
       <div className="card-view panel panel-default">
+
       <div className="card-edit">
         <button className="card-view-x-btn" onClick={this.handleClick.bind(this)}>X</button>
         <h2>{ this.state.title }</h2>
