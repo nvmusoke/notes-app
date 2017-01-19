@@ -94,11 +94,11 @@ class CardView extends Component {
 
           <form onSubmit={this.handleSubmit.bind(this)} className="form form-default">
             <div className={ this.state.hideFields ? 'hidden' : '' }>
-              <input ref="cardTitle" placeholder={this.state.title} onKeyUp={this.editTitle.bind(this)} type="text"/>
-              <textarea ref="cardText" onKeyUp={this.editText.bind(this)}/>
+              <input ref="cardTitle" onKeyUp={this.editTitle.bind(this)} type="text"/>
+              <textarea ref="cardText" onKeyUp={this.editText.bind(this)}>{this.state.text}</textarea>
             </div>
           <button type="button" onClick={this.props.onCancel} className="btn">Cancel</button>
-          <button className={this.state.hideEdit ? 'hidden' : 'btn' } type="button" onClick={this.handleEdit.bind(this)}>Edit</button>
+          <button className={this.state.hideEdit ? 'hidden' : 'btn' } type="button"  onClick={this.handleEdit.bind(this)}>Edit</button>
           <input type="submit" className={ this.state.hideFields ? 'hidden' : 'btn' } value="Save"/>
           </form>
 
