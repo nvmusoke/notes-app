@@ -1,22 +1,19 @@
-body {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html, body {
+  height: 100%;
 }
 /*Header Component styles*/
 
 header {
   background-color: #000;
-  margin-top:  0;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   width: 100%;
 }
 
 header img {
   width: 70px;
   height: 70px;
-  margin-left: 40px;
+  margin-left: 60px;
   margin-bottom: 30px;
 }
 
@@ -40,36 +37,62 @@ header h1 {
 nav {
   border-radius: 0;
   background-color: rgba(40,44,52, 0.8);
-  color: #fff;
   padding: 10px 0;
   margin-bottom: 15px;
   box-shadow: 0 3px 3px grey;
-
 }
 .nav-ul{
   margin: 0 auto;
-
 }
 .nav-li{
   display: inline;
   margin-left: 20px;
   font-family: 'Work Sans', sans-serif;
-  font-weight: 900;
+  font-weight: 600;
+  font-size: 18px;
 }
 .navlink{
   list-style: none;
   text-decoration: none;
-  color: #498b9f;
 }
-.navlink:hover{
+.navlink-dashboard, .navlink-lookup, .navlink-about {
+  color: #fff;
+  text-decoration: none;
+}
+.navlink-dashboard:visited, .navlink-lookup:visited, .navlink-about:visited {
   text-decoration: none;
   color: #fff;
 }
+
+.navlink-dashboard:hover{
+  text-decoration: none;
+  color: #c0392b;
+}
+.navlink-lookup:hover{
+  text-decoration: none;
+  color: #e67e22;
+}
+.navlink-about:hover{
+  text-decoration: none;
+  color: #f1c40f;
+}
+/*.navlink-dashboard:active, .navlink-lookup:active, .navlink-about:active {
+  text-decoration: none;
+  color: #fff;
+}*/
 .navlink:focus{
   text-decoration: none;
     color: #fff;
 }
 
+/*SearchBar Component Styles*/
+.search-dashboard {
+  text-align: center;
+}
+.search {
+  width: 300px;
+  padding: 10px 5px;
+}
 /*Cards Component styles*/
 
 #cards {
@@ -100,8 +123,11 @@ nav {
 
 /*Footer component styling*/
 
-footer {
+.footer-div {
   text-align: center;
+}
+footer {
+  height: 50px;
   margin-top: 5rem;
 }
 span {
@@ -220,4 +246,10 @@ color: #000;
 }
 #code{
   background-color: #000;
+}
+
+/*LogoutButton Component Styles*/
+
+.logout-div {
+  text-align: center;
 }
