@@ -325,7 +325,6 @@ color: #000;
 .input-info{
   font-size: 18px;
   line-height: 1.5em;
-  font-family: 'Open Sans', sans-serif;
   margin-top: 10px;
   padding: 1.7rem;
   min-height: 30rem;
@@ -340,6 +339,8 @@ color: #000;
   background:rgba(0,0,0,0);
   border: none;
   outline: none;
+  font-family: 'Work Sans', sans-serif;
+
 }
 .input-note{
   width: 280px;
@@ -347,18 +348,15 @@ color: #000;
   background:rgba(0,0,0,0);
   border: none;
   outline: none;
-  resize: none
+  resize: none;
+  font-family: 'Merriweather' serif;
 }
-<<<<<<< HEAD
-
-=======
 .submit-btns{
   display: block;
 }
 .submit{
   margin: 2%;
 }
->>>>>>> fa45617477f3facf72ae866cc7e04810c527f3d9
 /*Card View Component*/
 .card-view{
   border: none;
@@ -369,7 +367,6 @@ color: #000;
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.5em;
-  font-family: 'Open Sans', sans-serif;
   margin-top: 10px;
   padding: 1.7rem;
   min-height: 30rem;
@@ -379,10 +376,17 @@ color: #000;
   border-radius: 7px;
   box-shadow: 5px 5px 5px grey;
 }
+.card-view-title{
+  font-family: 'Work Sans', sans-serif;
+}
+.card-view-text{
+  font-family: 'Merriweather', serif;
+}
 .card-view-btns{
   display: flex;
   justify-content: center;
   margin-bottom: 5%;
+  border: none;
 }
 .card-view-x-btn{
   background: none;
