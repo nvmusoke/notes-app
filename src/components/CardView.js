@@ -8,6 +8,7 @@ class CardView extends Component {
     this.state={
       edit:'',
       hideFields: true,
+      hideEdit:false,
       title:'',
       text:''
     }
@@ -47,7 +48,8 @@ class CardView extends Component {
     //   title:
     // });
     this.setState({
-      hideFields:false
+      hideFields:false,
+      hideEdit:true
     });
   }
 
@@ -96,7 +98,7 @@ class CardView extends Component {
               <textarea ref="cardText" onKeyUp={this.editText.bind(this)}/>
             </div>
           <button type="button" onClick={this.props.onCancel} className="btn">Cancel</button>
-          <button type="button" onClick={this.handleEdit.bind(this)} className="btn">Edit</button>
+          <button className={this.state.hideEdit ? 'hidden' : 'btn' } type="button" onClick={this.handleEdit.bind(this)}>Edit</button>
           <input type="submit" className={ this.state.hideFields ? 'hidden' : 'btn' } value="Save"/>
           </form>
 

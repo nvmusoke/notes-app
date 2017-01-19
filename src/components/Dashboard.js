@@ -88,9 +88,8 @@ class Dashboard extends Component {
 
                 <Cards doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
             </div>
-            </div>
-          );
 
+          </div>);
         break;
       default:
         html =(<div><div className="dashboard-options">
@@ -98,11 +97,14 @@ class Dashboard extends Component {
                 <AddCard clicked={this.handleClick.bind(this)} />
                 <Cards onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
             </div>
-          </div>
-        );
+
+          </div>);
 
 
     }
+
+
+
     return (
       <div>
 
