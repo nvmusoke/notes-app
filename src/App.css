@@ -303,6 +303,20 @@ color: #000;
   outline: none;
   resize: none
 }
+/*Card View Component*/
+.card-view{
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 10px;
+  padding: 1.7rem;
+  min-height: 30rem;
+  position: relative;
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+  box-shadow: 5px 5px 5px grey;
+}
 /*LogoutButton Component Styles*/
 
 .logout-div {
