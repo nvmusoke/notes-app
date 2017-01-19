@@ -293,6 +293,7 @@ color: #000;
   height: 30px;
   background:rgba(0,0,0,0);
   border: none;
+  outline: none;
 }
 .input-note{
   width: 280px;
