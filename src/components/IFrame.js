@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import Iframe from 'react-iframe';
-
+import ReactDOM from 'react-dom';
+import iframe from 'react-iframe';
 
 class iFrame extends Component {
 
   render() {
     return (
 
-      <div className="container">
-      <Iframe url="http://www.w3schools.com"  />
+      <div className="iframe">
+        <iframe src="http://www.w3schools.com/" height="700px" width="800px">
+      </iframe>
       </div>
-
-
     )
   }
 }
+
 
 export default iFrame;

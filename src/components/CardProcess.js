@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SelectCategory from './SelectCategory';
 import CardForm from './CardForm';
-import { hashHistory } from 'react-router';
+// import { hashHistory } from 'react-router';
 import { firebase } from '../utils/firebase';
 
 
@@ -38,6 +38,7 @@ class CardProcess extends Component {
     e.preventDefault();
     console.log('my fucking category: ',value);
     this.setState({
+      showCategory:false,
       category:value
     })
   }
@@ -79,24 +80,24 @@ class CardProcess extends Component {
     });
   }
 
-  handleCategory(e,val){
-    e.preventDefault();
-    this.setState({
-
-      showCategory:false,
-      category:val
-
-
-    });
-  }
+  // handleCategory(e,val){
+  //   e.preventDefault();
+  //   this.setState({
+  //
+  //     showCategory:false,
+  //     category:val
+  //
+  //   });
+  // }
 
   handleCancel(e){
     e.preventDefault();
     this.setState({
-      showDashboard:this.props.finished()
+      showDashboard:this.state.finished()
 
     });
   }
+
   render() {
     const html = (this.state.showCategory) ? (<SelectCategory onChoose={this.handleCategory.bind(this)}/>)
       :
