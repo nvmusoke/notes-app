@@ -11,7 +11,6 @@ header {
 }
 
 header img {
-  animation: infinite 20s linear;
   width: 70px;
   height: 70px;
   margin-left: 60px;
@@ -32,6 +31,44 @@ header h1 {
 
 .landingpage-container {
   margin: 20px 20px;
+}
+
+/*Instructions Component styles*/
+
+.instructions-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.instructions-title h4 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 36px;
+}
+.instructions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+.instructions-img-login {
+  width: 40%;
+  height: 40%;
+  margin: 15px 0;
+}
+.instructions-img-create {
+  width: 40%;
+  height: 40%;
+  margin: 15px 0;
+}
+.instructions-img-view {
+  width: 125px;
+  height: 60px;
+  margin: 15px 0;
+}
+
+.instructions-container p {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
 }
 
 /*Nav Component styles*/
@@ -89,23 +126,9 @@ nav {
 
 .dashboard-options {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.dashboard-selectors{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-/*.addcard{
-  color: #fff;
-  font-family: 'Work Sans', sans-serif;
-  font-weight: bold;
-  border: none;
-  margin: 0 10px;
-  box-shadow: 2px 2px 5px grey;
-}*/
 /*SearchBar Component Styles*/
 .search-dashboard {
   text-align: center;
@@ -212,16 +235,12 @@ p {
   align-items: center;
   justify-content: center;
 
-
 }
-
 /*IFrame component styles*/
 
 .iframe{
 margin-top: 20px;
 padding-top: 20px;
-
-/*width: 60%;*/
 
 }
 
@@ -292,6 +311,12 @@ color: #000;
   background-color: #000;
 }
 /*Card Form Component Styles*/
+.cardform{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .input-info{
   font-size: 18px;
   line-height: 1.5em;
@@ -319,6 +344,16 @@ color: #000;
   outline: none;
   resize: none
 }
+<<<<<<< HEAD
+
+=======
+.submit-btns{
+  display: block;
+}
+.submit{
+  margin: 2%;
+}
+>>>>>>> fa45617477f3facf72ae866cc7e04810c527f3d9
 /*Card View Component*/
 .card-view{
   border: none;
@@ -349,6 +384,7 @@ color: #000;
   border: none;
 
 }
+
 /*LogoutButton Component Styles*/
 
 .logout-div {
