@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Iframe from 'react-iframe';
+
 
 class iFrame extends Component {
 
@@ -6,8 +8,10 @@ class iFrame extends Component {
     return (
 
       <div className="container">
-        <iframe src="http://www.w3schools.com" width="500px" height="700px" />
+      <Iframe url="http://www.w3schools.com"  />
       </div>
+
+
     )
   }
 }
