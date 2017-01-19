@@ -89,11 +89,8 @@ nav {
   font-weight: 600;
   font-size: 18px;
 }
-.navlink{
-  list-style: none;
-  text-decoration: none;
-}
-.navlink-dashboard, .navlink-lookup, .navlink-about {
+
+.navlink-dashboard, .navlink-lookup, .navlink-about, .logout-div{
   color: #fff;
   text-decoration: none;
 }
@@ -113,6 +110,11 @@ nav {
 .navlink-about:hover{
   text-decoration: none;
   color: #f1c40f;
+}
+
+.logout-div:hover{
+  text-decoration: none;
+  color: #2ecc71;
 }
 /*.navlink-dashboard:active, .navlink-lookup:active, .navlink-about:active {
   text-decoration: none;

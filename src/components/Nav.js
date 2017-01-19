@@ -22,7 +22,7 @@ class Header extends Component {
         <li className="nav-li"><NavLink className="navlink-dashboard" to="/dashboard" onlyActiveOnIndex>Dashboard</NavLink></li>
         <li className="nav-li"><NavLink className="navlink-lookup" to="/lookup" onlyActiveOnIndex>Lookup</NavLink></li>
         <li className="nav-li"><NavLink className="navlink-about" to="/about" onlyActiveOnIndex>About</NavLink></li>
-        <li className="nav-li"><NavLink className="navlink-about" to="/" onlyActiveOnIndex>{this.sessionButton()}</NavLink></li>
+        <li className="nav-li"><NavLink className="navlink-logout" to="/" onlyActiveOnIndex>{this.sessionButton()}</NavLink></li>
 
       </ul>
     </nav>
