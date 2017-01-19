@@ -12,7 +12,6 @@ import CardProcess from './CardProcess';
 import CardView from './CardView';
 
 
-
 class Dashboard extends Component {
 
   constructor(props){
@@ -83,20 +82,21 @@ class Dashboard extends Component {
         html = <CardProcess finished={this.restoreDash.bind(this)} />;
         break;
       case 'dashboard':
-        html=(<div>
-              <h1>User Dashboard</h1>
+        html=(<div><div className="dashboard-options">
                 <SearchBar />
                 <AddCard clicked={this.handleClick.bind(this)} />
+
                 <Cards doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
             </div>);
+
         break;
       default:
-        html = (<div>
-              <h1>User Dashboard</h1>
+        html =(<div><div className="dashboard-options">
                 <SearchBar />
                 <AddCard clicked={this.handleClick.bind(this)} />
                 <Cards onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
             </div>);
+
 
     }
     // const html=(this.state.showDashboard) ?

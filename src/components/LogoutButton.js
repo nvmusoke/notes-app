@@ -11,9 +11,11 @@ class LogoutButton extends Component {
 
   render() {
     return (
+      <div className="logout-div">
       <button
         onClick={ this.handleClick.bind(this) }
-        className="btn">{ this.props.children }</button>
+        className="btn logout">{ this.props.children }</button>
+      </div>
     )
   }
 }

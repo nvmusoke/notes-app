@@ -5,9 +5,11 @@ import React, { Component } from 'react';
 class Footer extends Component {
   render() {
     return (
-      <footer class="col-md-8 col-md-offset-2">
+      <div className="footer-div">
+      <footer>
         <p>Made with <span>&hearts;</span> by us!</p>
       </footer>
+      </div>
     )
   }
 }

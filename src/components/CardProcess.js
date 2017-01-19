@@ -28,7 +28,7 @@ class CardProcess extends Component {
 
   handleTyping(e,value){
     e.preventDefault();
-    console.log('my fucking value: ',value);
+    console.log('my fucking note value: ',value);
     this.setState({
       note:value
     });
@@ -82,17 +82,29 @@ class CardProcess extends Component {
   handleCategory(e,val){
     e.preventDefault();
     this.setState({
+
       showCategory:false,
       category:val
+
+
+    });
+  }
+
+  handleCancel(e){
+    e.preventDefault();
+    this.setState({
+      showDashboard:this.props.finished()
+
     });
   }
   render() {
     const html = (this.state.showCategory) ? (<SelectCategory onChoose={this.handleCategory.bind(this)}/>)
       :
-      (<CardForm onButtonPush={this.saveToDash.bind(this)} onStayButtonPush={this.saveAndStay.bind(this)} onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)}/>)
+      (<CardForm onButtonPush={this.saveToDash.bind(this)} onStayButtonPush={this.saveAndStay.bind(this)} onTitleType={this.handleTitleTyping.bind(this)} onType={this.handleTyping.bind(this)} onCancelPush={this.handleCancel.bind(this)}/>)
 
     return (
-      <div>Card Process
+      <div className="flexcontainer-parent">
+
         { html }
 
       </div>

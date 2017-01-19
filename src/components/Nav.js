@@ -6,10 +6,10 @@ class Header extends Component {
   render() {
     return (
       <nav>
-      <ul>
-        <li><NavLink to="/dashboard" onlyActiveOnIndex>Dashboard</NavLink></li>
-        <li><NavLink to="/lookup" onlyActiveOnIndex>Lookup</NavLink></li>
-        <li><NavLink to="/about" onlyActiveOnIndex>About</NavLink></li>
+      <ul className="nav-ul">
+        <li className="nav-li"><NavLink className="navlink-dashboard" to="/dashboard" onlyActiveOnIndex>Dashboard</NavLink></li>
+        <li className="nav-li"><NavLink className="navlink-lookup" to="/lookup" onlyActiveOnIndex>Lookup</NavLink></li>
+        <li className="nav-li"><NavLink className="navlink-about" to="/about" onlyActiveOnIndex>About</NavLink></li>
 
       </ul>
     </nav>
