@@ -21,7 +21,8 @@ class Dashboard extends Component {
       showCardProcess:false,
       showCardView:false,
       show:'',
-      cardNum:''
+      cardNum:'',
+      cards:[]
     }
   }
 
@@ -75,30 +76,74 @@ class Dashboard extends Component {
   }
 
   search(term){
+    this.setState({
+      show:'results'
+    });
     firebase.database()
     .ref('/notes')
     .on('value',(data)=>{
       let snapshot = data.val();
-
       console.log('the data: ',firebaseListToArray(snapshot));
-      const result = snapshot.map(value=>{
-        const userId = firebase.auth().currentUser.uid;
-        if(value.id===userId){
-          return value;
-        }
+      this.setState({
+        cards:firebaseListToArray(snapshot)
       });
     })
+    const userId = firebase.auth().currentUser.uid;
+    let data=this.state.cards;
+    let result = data.map(value=>{
+
+      if(value.uid){
+        let user = userId.toString();
+        let id = value.uid.toString();
+      if(user===id){
+        console.log('match!');
+        return value;
+      }
+    }
+
+    });
+    let final = [];
+    for(let i=0; i<result.length; i++){
+      if (!result[i]){
+        console.log('no');
+      }else{
+        final.push(result[i]);
+      }
+    };
+    console.log('final: ',final);
+    let newresult = [];
+    for(let i=0; i<final.length; i++){
+      if(term === final[i].category){
+        newresult.push(final[i]);
+      }
+
+    }
+    console.log('newresult: ',newresult);
+    return newresult;
   }
+
+
 
   render() {
     let dashState = this.state.show;
     let html = '';
     switch (dashState){
       case 'card':
-        html =   (<div>
-              <CardView cardNo={this.state.cardNum} onCancel={this.cancelCardView.bind(this)}/>
+        html = (<div>
+              <CardView cardId = { this.state.cardNum } cardNo={this.state.cardNum} onCancel={this.cancelCardView.bind(this)}/>
             </div>);
         break;
+      // case 'results':
+      //   html= (<div><div className="dashboard-options">
+      //           <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)} />
+      //           <AddCard clicked={this.handleClick.bind(this)} />
+      //
+      //           <Cards2 doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
+      //
+      //       </div>
+      //
+      //     </div>);
+      // break;
       case 'cardprocess' :
         html = <CardProcess finished={this.restoreDash.bind(this)} />;
         break;
