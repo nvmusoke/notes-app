@@ -11,6 +11,7 @@ header {
 }
 
 header img {
+  /*animation: infinite 20s linear;*/
   width: 70px;
   height: 70px;
   margin-left: 60px;
@@ -302,6 +303,36 @@ color: #000;
   border: none;
   outline: none;
   resize: none
+}
+/*Card View Component*/
+.card-view{
+  border: none;
+  margin: 0 auto;
+
+}
+.card-edit{
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 10px;
+  padding: 1.7rem;
+  min-height: 30rem;
+  position: relative;
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+  border-radius: 7px;
+  box-shadow: 5px 5px 5px grey;
+}
+.card-view-btns{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+.card-view-x-btn{
+  background: none;
+  border: none;
+  
 }
 /*LogoutButton Component Styles*/
 
