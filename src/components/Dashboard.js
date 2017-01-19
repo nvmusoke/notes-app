@@ -74,7 +74,7 @@ class Dashboard extends Component {
         break;
       case 'dashboard':
         html=(<div>
-              <h1>User Dashboard</h1>
+
                 <SearchBar />
                 <AddCard clicked={this.handleClick.bind(this)} />
                 <Cards onChoose={this.handleChoose.bind(this)}/>
@@ -82,7 +82,7 @@ class Dashboard extends Component {
         break;
       default:
         html = (<div>
-              <h1>User Dashboard</h1>
+              
                 <SearchBar />
                 <AddCard clicked={this.handleClick.bind(this)} />
                 <Cards onChoose={this.handleChoose.bind(this)}/>
