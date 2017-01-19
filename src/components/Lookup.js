@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 // import { hashHistory } from 'react-router';
 // import { firebase } from '../utils/firebase';
 import CardProcess from './CardProcess';
+import { hashHistory } from 'react-router';
 
 class Lookup extends Component {
+  restoreDash(){
+    hashHistory.push('/dashboard');
+  }
 
   render() {
     const embedUrl = 'http://www.w3schools.com/'
@@ -13,7 +17,7 @@ class Lookup extends Component {
       <iframe
           className="embed-responsive-item"
           src={ embedUrl } width="100%" height="500px"></iframe>
-      <CardProcess />
+      <CardProcess finished={this.restoreDash.bind(this)} />
       </div>
     )
   }
