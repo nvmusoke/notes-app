@@ -49,7 +49,7 @@ class App extends Component {
       <div>
 
         <Header />
-        <Nav />
+        <Nav user={this.state.user}/>
         <div className="content">
         { this.props.children || <LandingPage /> }
         { this.sessionButton() }

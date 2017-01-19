@@ -40,6 +40,7 @@ class CardView extends Component {
     {
       firebase.database().ref('/notes').child(id).remove();
     }
+    this.props.onCancel();
   }
   handleEdit(){
     console.log('handle edit');
