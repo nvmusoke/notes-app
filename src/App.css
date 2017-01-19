@@ -11,7 +11,7 @@ header {
 }
 
 header img {
-  /*animation: infinite 20s linear;*/
+  animation: infinite 20s linear;
   width: 70px;
   height: 70px;
   margin-left: 60px;
@@ -332,7 +332,7 @@ color: #000;
 .card-view-x-btn{
   background: none;
   border: none;
-  
+
 }
 /*LogoutButton Component Styles*/
 
