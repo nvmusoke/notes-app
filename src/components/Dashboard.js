@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { hashHistory } from 'react-router';
-import { firebase } from '../utils/firebase';
+import { firebase,firebaseListToArray} from '../utils/firebase';
 
 import Nav from './Nav';
 import Lookup from './Lookup';
@@ -70,12 +70,24 @@ class Dashboard extends Component {
   }
 
   searchTermChanged(e){
+    e.preventDefault();
     this.search(e.target.value);
   }
 
   search(term){
-    // firebase.refs('/notes')
-    // .
+    firebase.database()
+    .ref('/notes')
+    .on('value',(data)=>{
+      let snapshot = data.val();
+
+      console.log('the data: ',firebaseListToArray(snapshot));
+      const result = snapshot.map(value=>{
+        const userId = firebase.auth().currentUser.uid;
+        if(value.id===userId){
+          return value;
+        }
+      });
+    })
   }
 
   render() {
