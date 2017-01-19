@@ -91,8 +91,8 @@ class CardView extends Component {
 
       <div className="card-edit">
         <button className="card-view-x-btn" onClick={this.handleClick.bind(this)}>X</button>
-        <h2>{ this.state.title }</h2>
-        <div>{ this.state.text }</div>
+        <h2 className="card-view-title">{ this.state.title }</h2>
+        <div className="card-view-text">{ this.state.text }</div>
         {this.state.edit}
 
           <form onSubmit={this.handleSubmit.bind(this)} className="form form-default">
