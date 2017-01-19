@@ -33,7 +33,7 @@ class CardForm extends Component {
           </textarea>
         </div>
 
-      <div class="submit-btns">
+      <div className="submit-btns">
         <button
           onClick={this.props.onCancelPush}
           className="btn btn-primary submit">
