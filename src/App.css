@@ -299,6 +299,8 @@ color: #000;
   height: 200px;
   background:rgba(0,0,0,0);
   border: none;
+  outline: none;
+  resize: none
 }
 /*LogoutButton Component Styles*/
 
