@@ -3,3 +3,14 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.card {
+  background: #231e1e;
+  border-color: black;
+  color: white;
+  padding: 1.7rem;
+  min-height: 30rem;
+  position: relative;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}

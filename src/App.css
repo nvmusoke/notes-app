@@ -1,24 +1,456 @@
-.App {
+html, body {
+  height: 100%;
+}
+/*Header Component styles*/
+
+header {
+  background-color: #000;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+header img {
+  width: 84px;
+  height: 63px;
+  margin-left: 60px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  display: inline-block;
+  margin-left: 30px;
+  font-weight: 600;
+  font-family: 'Work Sans', sans-serif;
+  line-height: 50px;
+  color: white;
+  font-size: 8rem;
+}
+
+/*Landing Page Component styles*/
+
+.landingpage-container {
+  /*margin: 20px 20px;*/
+}
+
+/*Instructions Component styles*/
+
+.instructions-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: -15px;
+  padding-top: 15px;
+  background-color: #52555D;
+}
+.instructions-title h4 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 42px;
+  color: #fff;
+}
+.instructions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #52555D;
+  padding: 30px 0;
+}
+.instructions-card {
+  background: #231e1e;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  padding: 1.7rem;
+  height: 300px;
+  position: relative;
+  width: 250px;
+  margin: 1rem 1rem;
+  font-family: 'Work Sans', sans-serif;
+}
+.instructions-img-login {
+  width: 61px;
+  height: 104px;
+  margin: 25px 0 15px;
+}
+.instructions-img-create {
+  width: 40%;
+  height: 40%;
+  margin: 25px 0 15px;
+}
+.instructions-img-view {
+  width: 125px;
+  height: 60px;
+  margin: 50px 0 35px;
+}
+.instructions-container p {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+
+/*Nav Component styles*/
+nav {
+  border-radius: 0;
+  background-color: rgba(40,44,52, 0.8);
+  padding: 10px 0;
+  box-shadow: 0 3px 3px grey;
+}
+.nav-ul{
+  margin: 0 auto;
+}
+.nav-li{
+  display: inline;
+  margin-left: 20px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.navlink-dashboard, .navlink-lookup, .navlink-about, .logout-div{
+  color: #fff;
+  text-decoration: none;
+}
+.navlink-dashboard:visited, .navlink-lookup:visited, .navlink-about:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navlink-dashboard:hover{
+  text-decoration: none;
+  color: #c0392b;
+}
+.navlink-lookup:hover{
+  text-decoration: none;
+  color: #e67e22;
+}
+.navlink-about:hover{
+  text-decoration: none;
+  color: #f1c40f;
+}
+
+.logout-div:hover{
+  text-decoration: none;
+  color: #2ecc71;
+}
+#logout{
+margin-left: 60%;
+}
+/*.navlink-dashboard:active, .navlink-lookup:active, .navlink-about:active {
+  text-decoration: none;
+  color: #fff;
+}*/
+.navlink:focus{
+  text-decoration: none;
+    color: #fff;
+}
+/*Dashboard Component Styles*/
+
+.dashboard-options {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-selectors {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+/*SearchBar Component Styles*/
+.search-dashboard {
+  /*text-align: center;*/
+  margin: 20px 0;
+}
+.search {
+  width: 400px;
+  padding: 10px 5px;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid #52555D;
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+}
+
+/*AddCard Component Styles*/
+.add-card {
+  background-color: #52555D;
+  margin-left: 100px;
+}
+/*Cards Component styles*/
+
+#cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px 20px;
+}
+
+/*Card Component styles*/
+
+.card {
+  background: #231e1e;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  padding: 1.7rem;
+  height: 300px;
+  position: relative;
+  width: 250px;
+  /*margin-bottom: 1.5rem;*/
+  margin: 1rem 1rem;
+  font-family: 'Work Sans', sans-serif;
+  box-shadow: 3px 3px 3px grey;
+}
+.delete-card {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 180px;
+  margin-top: 10px;
+
+}
+
+/*Footer component styling*/
+
+.footer-div {
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+footer {
+  height: 50px;
+  margin-top: 5rem;
+}
+footer p {
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+}
+.heart {
+  color:#cf2e31;
+}
+.coffee {
+  color: #a54e0b;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+/*Used in About.js, Footer.js and Instructions.js*/
+p {
+  font-size: 2.5rem;
+  line-height: 150%;
+  color: silver;
+  padding-bottom: 10px;
 }
 
-.App-intro {
-  font-size: large;
+/*Welcome component styles*/
+
+.hero  {
+  text-align: center;
+  width: 100%;
+  height: 350px;
+  background-image: url("../public/images/escher.png") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*.hero img {
+  width: 90%;
+}*/
+.welcome-message {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 50px 0 30px;
+}
+.welcome-message h4 {
+  font-family: 'Merriweather', serif;
+  font-size: 32px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/*LoginButton component styles*/
+
+.login-container {
+  display: flex;
+  justify-content: center;
+}
+.login-btn {
+  background-color: rgb(82,85,93);
+  width: 120px;
+  font-size: 18px;
+}
+
+/*Lookup Component Styles*/
+
+.flexcontainer-parent {
+  margin: 20px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+}
+/*IFrame component styles*/
+
+.iframe{
+margin-top: 20px;
+padding-top: 20px;
+
+}
+
+/*SelectCategory component styles*/
+
+.flexcontainer {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+.row{
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.btn{
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  margin: 0 10px;
+  box-shadow: 2px 2px 5px grey;
+  padding: 10px 15px
+}
+
+.btn.active.focus, .btn.active:focus,
+.btn.focus, .btn:active.focus,
+.btn:active:focus, .btn:focus {
+  outline: none;
+}
+
+#resources{
+background-color: #ecf0f1;
+color: #000;
+}
+#html{
+  background-color: #c0392b;
+}
+#html::selection  {
+  background-color: #c0392b;
+}
+#css{
+  background-color: #e67e22;
+}
+#javascript{
+  background-color: #f1c40f;
+}
+#frontend_frameworks{
+  background-color: #2ecc71;
+}
+#backend_frameworks{
+  background-color: #0c7a7a;
+}
+#git{
+  background-color: #2980b9;
+}
+#design{
+  background-color: #7a2f99;
+}
+#other{
+  background-color:#646869;
+}
+#code{
+  background-color: #000;
+}
+/*Card Form Component Styles*/
+.cardform{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-info{
+  font-size: 18px;
+  line-height: 1.5em;
+  margin-top: 10px;
+  padding: 1.7rem;
+  min-height: 30rem;
+  position: relative;
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+  box-shadow: 5px 5px 5px grey;
+}
+.input-title{
+  width: 280px;
+  height: 30px;
+  background:rgba(0,0,0,0);
+  border: none;
+  outline: none;
+  font-family: 'Work Sans', sans-serif;
+
+}
+.input-note{
+  width: 280px;
+  height: 200px;
+  background:rgba(0,0,0,0);
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: 'Merriweather' serif;
+}
+
+.submit-btns{
+  display: block;
+}
+.submit{
+  margin: 2%;
+}
+
+/*Card View Component*/
+.card-view{
+  border: none;
+  margin: 0 auto;
+
+}
+.card-edit{
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.5em;
+  margin-top: 10px;
+  padding: 1.7rem;
+  min-height: 30rem;
+  position: relative;
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+  border-radius: 7px;
+  box-shadow: 5px 5px 5px grey;
+}
+.card-view-title{
+  font-family: 'Work Sans', sans-serif;
+}
+.card-view-text{
+  font-family: 'Merriweather', serif;
+}
+.card-view-btns{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+  border: none;
+}
+.card-view-x-btn{
+  background: none;
+  border: none;
+
+}
+
+/*LogoutButton Component Styles*/
+
+.logout-div {
+  text-align: center;
 }
