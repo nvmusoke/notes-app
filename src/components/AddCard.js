@@ -5,7 +5,7 @@ class AddCard extends Component {
 
   render() {
     return (
-        <button onClick={this.props.clicked} className="btn">Add Card</button>
+        <button onClick={this.props.clicked} className="btn add-card">Add Card</button>
     )
   }
 }

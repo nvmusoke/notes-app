@@ -7,7 +7,7 @@ class Footer extends Component {
     return (
       <div className="footer-div">
       <footer>
-        <p>Made with <span>&hearts;</span> by us!</p>
+        <p>Made with <span className="heart">&hearts;</span> (and <span className="coffee">&#9832;</span>) by us!</p>
       </footer>
       </div>
     )

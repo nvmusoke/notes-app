@@ -94,7 +94,9 @@ class Cards extends Component {
 
         return (
 
+
           <section id="cards" className="container-fluid">
+
             { cards.reverse() }
           </section>
         );
