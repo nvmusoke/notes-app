@@ -130,7 +130,7 @@ class Dashboard extends Component {
     switch (dashState){
       case 'card':
         html = (<div>
-              <CardView cardId = { this.state.cardNum } cardNo={this.state.cardNum} onCancel={this.cancelCardView.bind(this)}/>
+              <CardView category={this.state.category} cardId = { this.state.cardNum } cardNo={this.state.cardNum} onCancel={this.cancelCardView.bind(this)}/>
             </div>);
         break;
       // case 'results':

@@ -11,8 +11,8 @@ header {
 }
 
 header img {
-  width: 84px;
-  height: 63px;
+  width: 80px;
+  height: 80px;
   margin-left: 60px;
   margin-bottom: 30px;
 }
@@ -177,6 +177,7 @@ margin-left: 60%;
 .add-card {
   background-color: #52555D;
   margin-left: 100px;
+  height: 40px;
 }
 /*Cards Component styles*/
 

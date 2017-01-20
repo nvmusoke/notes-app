@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <header>
 
-     <img src={require("../../public/images/impossiblestairs.gif")} /><h1>gistAlt</h1>
+     <img src={require("../../public/images/stairs.gif")} /><h1>gistAlt</h1>
 
     </header>
     );
