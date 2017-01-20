@@ -68,6 +68,7 @@ class Dashboard extends Component {
       });
       console.log('current state of cards: ',this.state.cards);
       });
+
     }
 
 
@@ -132,7 +133,7 @@ class Dashboard extends Component {
 
 
     const userId = firebase.auth().currentUser.uid;
-    let cards=firebaseListToArray(snapshot)
+    let cards=firebaseListToArray(snapshot);
     let result = cards.map(value=>{
 
       if(value.uid){
@@ -168,6 +169,13 @@ class Dashboard extends Component {
       cards:absolute
     });
     console.log('searchHandle state of cards: ',this.state.cards);
+    if(absolute.length===0){
+      console.log('we will set with result: ',result);
+      this.setState({
+        cards:final
+      });
+    }
+
     });
 
 
