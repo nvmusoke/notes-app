@@ -22,10 +22,55 @@ class Dashboard extends Component {
       showCardView:false,
       show:'',
       cardNum:'',
-      cards:'',
+      cards:[],
       searchTerm:''
     }
   }
+
+    search(){
+
+      firebase.database()
+      .ref('/notes')
+      .on('value',(data)=>{
+        let snapshot = data.val();
+        console.log('the data: ',firebaseListToArray(snapshot));
+        this.setState({
+          cards:firebaseListToArray(snapshot)
+        });
+
+
+      const userId = firebase.auth().currentUser.uid;
+      let cards=this.state.cards;
+      let result = cards.map(value=>{
+
+        if(value.uid){
+          let user = userId.toString();
+          let id = value.uid.toString();
+        if(user===id){
+          console.log('match!');
+          return value;
+        }
+      }
+
+      });
+      let final = [];
+      for(let i=0; i<result.length; i++){
+        if (!result[i]){
+          console.log('no');
+        }else{
+          final.push(result[i]);
+        }
+      };
+      console.log('final: ',final);
+
+      this.setState({
+        cards:final
+      });
+      console.log('current state of cards: ',this.state.cards);
+      });
+    }
+
+
 
   componentWillMount(){
     firebase.auth().onAuthStateChanged(
@@ -37,6 +82,7 @@ class Dashboard extends Component {
         }
       });
 
+      this.search();
   }
   handleClick(e){
     e.preventDefault();
@@ -74,17 +120,7 @@ class Dashboard extends Component {
   searchTermChanged(e){
     e.preventDefault();
     console.log('now the freaking value is: ',e.target.value);
-    this.setState({
-      searchTerm:e.target.value
-    });
-    console.log('and the state is: ',this.state.searchTerm);
-    // this.search(e.target.value);
-  }
-
-  search(term){
-    this.setState({
-      show:'results'
-    });
+    let term = e.target.value;
     firebase.database()
     .ref('/notes')
     .on('value',(data)=>{
@@ -93,10 +129,11 @@ class Dashboard extends Component {
       this.setState({
         cards:firebaseListToArray(snapshot)
       });
-    })
+
+
     const userId = firebase.auth().currentUser.uid;
-    let data=this.state.cards;
-    let result = data.map(value=>{
+    let cards=firebaseListToArray(snapshot)
+    let result = cards.map(value=>{
 
       if(value.uid){
         let user = userId.toString();
@@ -117,22 +154,29 @@ class Dashboard extends Component {
       }
     };
     console.log('final: ',final);
-    let newresult = [];
-    for(let i=0; i<final.length; i++){
-      if(term === final[i].category){
-        newresult.push(final[i]);
-      }
 
-    }
-    console.log('newresult: ',newresult);
+    let absolute = [];
+    for(let i=0; i<final.length; i++){
+      console.log('final category: ',final[i].category);
+      console.log('term: ',term);
+      if (final[i].category===term){
+        absolute.push(final[i]);
+      }
+    };
+    console.log('absolute: ',absolute);
     this.setState({
-      cards:newresult
+      cards:absolute
     });
+    console.log('searchHandle state of cards: ',this.state.cards);
+    });
+
+
   }
 
 
-
   render() {
+    let cards = this.state.cards;
+    console.log('cards we will render: ',cards);
     let dashState = this.state.show;
     let html = '';
     switch (dashState){
@@ -141,17 +185,6 @@ class Dashboard extends Component {
               <CardView category={this.state.category} cardId = { this.state.cardNum } cardNo={this.state.cardNum} onCancel={this.cancelCardView.bind(this)}/>
             </div>);
         break;
-      // case 'results':
-      //   html= (<div><div className="dashboard-options">
-      //           <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)} />
-      //           <AddCard clicked={this.handleClick.bind(this)} />
-      //
-      //           <Cards2 doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
-      //
-      //       </div>
-      //
-      //     </div>);
-      // break;
       case 'cardprocess' :
         html = <CardProcess finished={this.restoreDash.bind(this)} />;
         break;
@@ -160,7 +193,7 @@ class Dashboard extends Component {
                 <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)} />
                 <AddCard clicked={this.handleClick.bind(this)} />
 
-                <Cards searchTerm={this.state.searchTerm} doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
+                <Cards things={cards} doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
 
             </div>
 
@@ -173,7 +206,7 @@ class Dashboard extends Component {
                     <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)}/>
                     <AddCard clicked={this.handleClick.bind(this)} />
                     </div>
-                <Cards searchTerm={this.state.searchTerm} onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
+                <Cards things={cards} onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
 
             </div>
 
