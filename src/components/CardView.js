@@ -10,13 +10,15 @@ class CardView extends Component {
       hideFields: true,
       hideEdit:false,
       title:'',
-      text:''
+      text:'',
+      category:''
     }
   }
   componentWillMount(){
     const cardId=this.props.cardNo;
     let cardTitle='';
     let cardNote='';
+    let cardCategory='';
     firebase.database()
     .ref('/notes')
     .child(cardId)
@@ -24,10 +26,12 @@ class CardView extends Component {
       let cardData = data.val();
       cardNote = cardData.note;
       cardTitle = cardData.title;
+      cardCategory = cardData.category
       console.log('Our fucking card is: ', cardData);
       this.setState({
         title:cardTitle,
-        text:cardNote
+        text:cardNote,
+        category:cardCategory
       });
 
       console.log('fucking title: ',cardTitle);
@@ -89,7 +93,7 @@ class CardView extends Component {
     return (
       <div className="card-view panel panel-default">
 
-      <div className="card-edit">
+      <div className="card-edit" id={this.state.category}>
         <button className="card-view-x-btn" onClick={this.handleClick.bind(this)}>X</button>
         <h2>{ this.state.title }</h2>
         <div>{ this.state.text }</div>
