@@ -11,7 +11,8 @@ class CardView extends Component {
       hideEdit:false,
       title:'',
       text:'',
-      category: ''
+      category:''
+
     }
   }
   componentWillMount(){
@@ -19,6 +20,7 @@ class CardView extends Component {
     let cardCategory='';
     let cardTitle='';
     let cardNote='';
+    let cardCategory='';
     firebase.database()
     .ref('/notes')
     .child(cardId)
@@ -27,11 +29,16 @@ class CardView extends Component {
       cardCategory = cardData.category;
       cardNote = cardData.note;
       cardTitle = cardData.title;
+      cardCategory = cardData.category
       console.log('Our fucking card is: ', cardData);
       this.setState({
         title:cardTitle,
         text:cardNote,
+<<<<<<< HEAD
         category: cardCategory
+=======
+        category:cardCategory
+>>>>>>> c3f87cfd0fde35e175d39d6f0d8f0a27ff2ec41c
       });
 
       console.log('fucking title: ',cardTitle);
