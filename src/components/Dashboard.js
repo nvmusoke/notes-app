@@ -72,7 +72,11 @@ class Dashboard extends Component {
 
   searchTermChanged(e){
     e.preventDefault();
-    this.search(e.target.value);
+    console.log('now the value is: ',e.target.value);
+    this.setState({
+      cards:e.target.value
+    });
+    // this.search(e.target.value);
   }
 
   search(term){
@@ -119,7 +123,9 @@ class Dashboard extends Component {
 
     }
     console.log('newresult: ',newresult);
-    return newresult;
+    this.setState({
+      cards:newresult
+    });
   }
 
 
@@ -152,7 +158,7 @@ class Dashboard extends Component {
                 <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)} />
                 <AddCard clicked={this.handleClick.bind(this)} />
 
-                <Cards doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
+                <Cards cards={this.state.cards} doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
 
             </div>
 
@@ -165,7 +171,7 @@ class Dashboard extends Component {
                     <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)}/>
                     <AddCard clicked={this.handleClick.bind(this)} />
                     </div>
-                <Cards onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
+                <Cards cards={this.state.cards} onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
 
             </div>
 

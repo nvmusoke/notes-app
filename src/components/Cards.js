@@ -7,22 +7,31 @@ class Cards extends Component {
   constructor(props){
     super(props);
     this.state = {
-      cards: []
+      searchterm: this.props.cards,
+      cards:[]
     }
   }
   componentWillMount(){
+    let searchterm = this.state.searchterm;
     firebase.auth().onAuthStateChanged(user=>{
       console.log('user ID in Cards is: ',user.uid);
     });
+
     firebase.database()
     .ref('/notes')
     .on('value', data => {
       const cardData = firebaseListToArray(data.val());
       // console.log('Card data: ', cardData);
+
       this.setState({
         cards:cardData
       });
+      console.log('the cardys in Cards are: ',cardData);
+
     });
+  }
+  componentWillUpdate(){
+
   }
 
   handleTap(id){
@@ -37,7 +46,7 @@ class Cards extends Component {
   render() {
     const user = firebase.auth().currentUser;
     const cards = this.state.cards.map(card=>{
-          if(card.uid===user.uid){
+          if(card.uid===user.uid || card.category===this.state.searchterm){
             return <Card onTap={this.handleTap.bind(this)} noRoute={this.routeNo.bind(this)} category={card.category} user={card.uid} title={card.title} note={card.note} cardId={card.id}/>;
           }
         });
