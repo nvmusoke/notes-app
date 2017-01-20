@@ -438,9 +438,16 @@ color: #000;
 }
 .card-view-title{
   font-family: 'Work Sans', sans-serif;
+  color: #fff;
 }
 .card-view-text{
   font-family: 'Merriweather', serif;
+  color: #fff;
+}
+.card-view-text p{
+  /*width: 80%;*/
+  word-wrap: break-word;
+  color: #fff;
 }
 .card-view-btns{
   display: flex;
@@ -449,8 +456,15 @@ color: #000;
   border: none;
 }
 .card-view-x-btn{
+
+  margin-left: 220px;
+  margin-top: 10px;
   background: none;
   border: none;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
 
 }
 
@@ -458,4 +472,9 @@ color: #000;
 
 .logout-div {
   text-align: center;
+}
+
+/*About Component styles*/
+.about-container {
+  margin: 20px 20px;
 }

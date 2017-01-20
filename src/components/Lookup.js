@@ -5,21 +5,8 @@ import CardProcess from './CardProcess';
 import { hashHistory } from 'react-router';
 
 class Lookup extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      edit:true
-    }
-  }
-
-  restoreLookup(){
-    hashHistory.push('/dash');
-  }
-
-  handleStart(){
-    this.setState({
-      edit:false
-    });
+  restoreDash(){
+    hashHistory.push('/dashboard');
   }
 
   render() {
@@ -27,13 +14,13 @@ class Lookup extends Component {
 
     return (
       <div className="flexcontainer-parent">
+
       <iframe
           className="embed-responsive-item"
-          src={ embedUrl } width="100%" height="500px"></iframe>
-          <CardProcess onCancel={this.handleStart.bind(this)} />
-        </div>
+          src={ embedUrl } width="500px" height="500px"></iframe>
+      <CardProcess finished={this.restoreDash.bind(this)} />
+      </div>
     )
-
   }
 }
 
