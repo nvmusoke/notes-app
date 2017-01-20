@@ -27,6 +27,8 @@ class Dashboard extends Component {
     }
   }
 
+
+
     search(){
 
       firebase.database()
@@ -40,7 +42,7 @@ class Dashboard extends Component {
 
 
       const userId = firebase.auth().currentUser.uid;
-      let cards=this.state.cards;
+      let cards=firebaseListToArray(snapshot);
       let result = cards.map(value=>{
 
         if(value.uid){
@@ -62,10 +64,20 @@ class Dashboard extends Component {
         }
       };
       console.log('final: ',final);
+      if(final.length === 0){
+        this.setState({
+          cards:final
+        });
+      }
 
       this.setState({
         cards:final
       });
+      if(final.length === 0){
+        this.setState({
+          cards:result
+        });
+      }
       console.log('current state of cards: ',this.state.cards);
       });
 
@@ -157,10 +169,11 @@ class Dashboard extends Component {
     console.log('final: ',final);
 
     let absolute = [];
+    let testVar = new RegExp(term);
     for(let i=0; i<final.length; i++){
       console.log('final category: ',final[i].category);
       console.log('term: ',term);
-      if (final[i].category===term){
+      if (testVar.test(final[i].category) || testVar.test(final[i].note)){
         absolute.push(final[i]);
       }
     };
@@ -168,6 +181,7 @@ class Dashboard extends Component {
     this.setState({
       cards:absolute
     });
+
     console.log('searchHandle state of cards: ',this.state.cards);
     if(absolute.length===0){
       console.log('we will set with result: ',result);
@@ -197,11 +211,13 @@ class Dashboard extends Component {
         html = <CardProcess finished={this.restoreDash.bind(this)} />;
         break;
       case 'dashboard':
-        html=(<div><div className="dashboard-options">
-                <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)} />
-                <AddCard clicked={this.handleClick.bind(this)} />
-
-                <Cards things={cards} doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
+        html=(<div className="dashboard-options">
+                <div>
+                  <div className="dashboard-selectors">
+                    <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)}/>
+                    <AddCard clicked={this.handleClick.bind(this)} />
+                    </div>
+                <Cards things={cards} onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
 
             </div>
 

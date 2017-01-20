@@ -27,14 +27,12 @@ class CardView extends Component {
       cardNote = cardData.note;
       cardTitle = cardData.title;
       cardCategory = cardData.category
-      console.log('Our fucking card is: ', cardData);
       this.setState({
         title:cardTitle,
         text:cardNote,
         category:cardCategory
       });
 
-      console.log('fucking title: ',cardTitle);
     });
   }
   handleClick(e){
@@ -105,12 +103,13 @@ class CardView extends Component {
               <textarea className="input-note" ref="cardText" onKeyUp={this.editText.bind(this)}>{this.state.text}</textarea>
             </div>
 
+            <input type="submit" className={ this.state.hideFields ? 'hidden' : 'btn' } value="Save"/>
           </form>
           </div>
           <div className="card-view-btns">
-          <button type="button" onClick={this.props.onCancel} className="btn">Cancel</button>
-          <button className={this.state.hideEdit ? 'hidden' : 'btn' } type="button"  onClick={this.handleEdit.bind(this)}>Edit</button>
-          <input type="submit" className={ this.state.hideFields ? 'hidden' : 'btn' } value="Save"/>
+            <button type="button" onClick={this.props.onCancel} className="btn">Cancel</button>
+            <button className={this.state.hideEdit ? 'hidden' : 'btn' } type="button"  onClick={this.handleEdit.bind(this)}>Edit</button>
+
           </div>
       </div>
     )

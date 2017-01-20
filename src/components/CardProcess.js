@@ -20,7 +20,6 @@ class CardProcess extends Component {
 
   handleTitleTyping(e,value){
     e.preventDefault();
-    console.log('my fucking title value: ',value);
     this.setState({
       title:value
     });
@@ -28,7 +27,6 @@ class CardProcess extends Component {
 
   handleTyping(e,value){
     e.preventDefault();
-    console.log('my fucking note value: ',value);
     this.setState({
       note:value
     });
@@ -36,7 +34,6 @@ class CardProcess extends Component {
 
   handleCategory(e,value){
     e.preventDefault();
-    console.log('my fucking category: ',value);
     this.setState({
       showCategory:false,
       category:value
@@ -50,7 +47,6 @@ class CardProcess extends Component {
 
     console.log('savetoDash: ',val);
 
-    console.log('back to the fucking dashboard');
 
     firebase.database()
     .ref('/notes')
@@ -69,7 +65,6 @@ class CardProcess extends Component {
     const val=[this.state.note,this.state.category];
     const userId = firebase.auth().currentUser.uid;
     console.log('savetoDash: ',val);
-    console.log('back to the fucking dashboard');
     firebase.database()
     .ref('/notes')
     .push({

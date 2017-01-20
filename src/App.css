@@ -361,7 +361,8 @@ color: #000;
 .card-view{
   border: none;
   margin: 0 auto;
-
+  display: block;
+  word-wrap: break-word;
 }
 .card-edit{
   margin: 0 auto;
@@ -398,4 +399,11 @@ color: #000;
 
 .logout-div {
   text-align: center;
+}
+
+.lookup-links button{
+  margin: 5px 15px 5px 0px;
+}
+.lookup-links li{
+  list-style: none;
 }
