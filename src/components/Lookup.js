@@ -10,14 +10,14 @@ class Lookup extends Component {
   }
 
   render() {
-    const embedUrl = 'http://www.w3schools.com/'
+    const embedUrl = 'https://repl.it/languages/javascript'
 
     return (
       <div className="flexcontainer-parent">
 
       <iframe
           className="embed-responsive-item"
-          src={ embedUrl } width="500px" height="500px"></iframe>
+          src={ embedUrl } width="500px" height="600px"></iframe>
       <CardProcess finished={this.restoreDash.bind(this)} />
       </div>
     )
