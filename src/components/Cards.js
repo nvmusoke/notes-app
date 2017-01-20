@@ -43,8 +43,8 @@ class Cards extends Component {
         });
         // console.log('cards array: ',cards);
         return (
-          
-          <section id="cards" className="container-fluid">
+
+          <section id="cards">
             { cards.reverse() }
           </section>
         );

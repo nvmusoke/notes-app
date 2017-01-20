@@ -6,10 +6,10 @@ class Welcome extends Component {
     return (
       <div>
         <div className="hero">
-          <img src={require("../../public/images/stairs.png")} />
+
         </div>
         <div className="welcome-message">
-          <h4>Ending the madness... one step at a time</h4>
+          <h4>Become a great developer... one step at a time</h4>
         </div>
       </div>
     );
