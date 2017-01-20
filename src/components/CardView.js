@@ -12,10 +12,12 @@ class CardView extends Component {
       title:'',
       text:'',
       category:''
+
     }
   }
   componentWillMount(){
     const cardId=this.props.cardNo;
+
     let cardTitle='';
     let cardNote='';
     let cardCategory='';
@@ -24,6 +26,7 @@ class CardView extends Component {
     .child(cardId)
     .on('value', data => {
       let cardData = data.val();
+      cardCategory = cardData.category;
       cardNote = cardData.note;
       cardTitle = cardData.title;
       cardCategory = cardData.category
@@ -31,7 +34,9 @@ class CardView extends Component {
       this.setState({
         title:cardTitle,
         text:cardNote,
+
         category:cardCategory
+
       });
 
       console.log('fucking title: ',cardTitle);
@@ -96,7 +101,7 @@ class CardView extends Component {
       <div className="card-edit" id={this.state.category}>
         <button className="card-view-x-btn" onClick={this.handleClick.bind(this)}>X</button>
         <h2 className="card-view-title">{ this.state.title }</h2>
-        <div className="card-view-text">{ this.state.text }</div>
+        <div className="card-view-text"><p>{ this.state.text }</p></div>
         {this.state.edit}
 
           <form onSubmit={this.handleSubmit.bind(this)} className="form form-default">

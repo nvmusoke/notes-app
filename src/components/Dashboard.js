@@ -156,10 +156,12 @@ class Dashboard extends Component {
         html = <CardProcess finished={this.restoreDash.bind(this)} />;
         break;
       case 'dashboard':
-        html=(<div><div className="dashboard-options">
+        html=(<div className="dashboard-options">
+              <div>
+              <div className="dashboard-selectors">
                 <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)} />
                 <AddCard clicked={this.handleClick.bind(this)} />
-
+              </div>
                 <Cards searchTerm={this.state.searchTerm} doNotRoute={this.cutRouting.bind(this)} onChoose={this.handleChoose.bind(this)}/>
 
             </div>

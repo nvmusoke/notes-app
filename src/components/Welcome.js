@@ -9,7 +9,9 @@ class Welcome extends Component {
 
         </div>
         <div className="welcome-message">
-          <h4>Become a great developer... one step at a time</h4>
+          <h4>As you climb the development ladder,
+          make sure you aren't staying in the same place
+            </h4>
         </div>
       </div>
     );
