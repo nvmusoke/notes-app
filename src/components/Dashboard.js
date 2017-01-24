@@ -27,20 +27,15 @@ class Dashboard extends Component {
     }
   }
 
-
-
     search(){
 
       firebase.database()
       .ref('/notes')
       .on('value',(data)=>{
         let snapshot = data.val();
-        console.log('the data: ',firebaseListToArray(snapshot));
         this.setState({
           cards:firebaseListToArray(snapshot)
         });
-
-
       const userId = firebase.auth().currentUser.uid;
       let cards=firebaseListToArray(snapshot);
       let result = cards.map(value=>{
@@ -49,7 +44,6 @@ class Dashboard extends Component {
           let user = userId.toString();
           let id = value.uid.toString();
         if(user===id){
-          console.log('match!');
           return value;
         }
       }
@@ -58,12 +52,10 @@ class Dashboard extends Component {
       let final = [];
       for(let i=0; i<result.length; i++){
         if (!result[i]){
-          console.log('no');
         }else{
           final.push(result[i]);
         }
       };
-      console.log('final: ',final);
       if(final.length === 0){
         this.setState({
           cards:final
@@ -78,7 +70,6 @@ class Dashboard extends Component {
           cards:result
         });
       }
-      console.log('current state of cards: ',this.state.cards);
       });
 
     }
@@ -109,8 +100,6 @@ class Dashboard extends Component {
     });
   }
   handleChoose(cards,thisCardId){
-    console.log('thiscardid: ',thisCardId);
-    // console.log('cards passed up:',cards);
     this.setState({
       show:'card',
       cardNum:thisCardId
@@ -123,7 +112,6 @@ class Dashboard extends Component {
     });
   }
   cutRouting(){
-    console.log('setting state to dashboard');
     var dash = ()=>this.setState({
       show:'dashboard'
     })
@@ -138,7 +126,6 @@ class Dashboard extends Component {
     .ref('/notes')
     .on('value',(data)=>{
       let snapshot = data.val();
-      console.log('the data: ',firebaseListToArray(snapshot));
       this.setState({
         cards:firebaseListToArray(snapshot)
       });
@@ -152,7 +139,6 @@ class Dashboard extends Component {
         let user = userId.toString();
         let id = value.uid.toString();
       if(user===id){
-        console.log('match!');
         return value;
       }
     }
@@ -161,30 +147,23 @@ class Dashboard extends Component {
     let final = [];
     for(let i=0; i<result.length; i++){
       if (!result[i]){
-        console.log('no');
       }else{
         final.push(result[i]);
       }
     };
-    console.log('final: ',final);
-
     let absolute = [];
     let testVar = new RegExp(term);
     for(let i=0; i<final.length; i++){
-      console.log('final category: ',final[i].category);
-      console.log('term: ',term);
       if (testVar.test(final[i].category) || testVar.test(final[i].note)){
         absolute.push(final[i]);
       }
     };
-    console.log('absolute: ',absolute);
     this.setState({
       cards:absolute
     });
 
     console.log('searchHandle state of cards: ',this.state.cards);
     if(absolute.length===0){
-      console.log('we will set with result: ',result);
       this.setState({
         cards:final
       });

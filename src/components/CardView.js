@@ -45,7 +45,6 @@ class CardView extends Component {
     this.props.onCancel();
   }
   handleEdit(){
-    console.log('handle edit');
     var id=this.props.cardId;
     // firebase.database().ref('/notes').child(id).update({
     //   title:
@@ -66,11 +65,9 @@ class CardView extends Component {
       text: e.target.value
     });
   }
-
   handleSubmit(e){
     const cardId=this.props.cardNo;
     e.preventDefault();
-    console.log('submithandle');
       const cardTitle = this.refs.cardTitle.value;
       const cardText = this.refs.cardText.value;
 
@@ -81,7 +78,6 @@ class CardView extends Component {
         note: cardText
       })
       .then(data => {
-        console.log('Successful save');
         this.props.onCancel();
       });
   }
