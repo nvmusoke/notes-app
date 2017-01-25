@@ -154,7 +154,7 @@ class Dashboard extends Component {
     let absolute = [];
     let testVar = new RegExp(term);
     for(let i=0; i<final.length; i++){
-      if (testVar.test(final[i].category) || testVar.test(final[i].note)){
+      if (testVar.test(final[i].category.toLowerCase()) || testVar.test(final[i].note.toLowerCase()) || testVar.test(final[i].title.toLowerCase())){
         absolute.push(final[i]);
       }
     };
