@@ -152,7 +152,7 @@ class Dashboard extends Component {
       }
     };
     let absolute = [];
-    let testVar = new RegExp(term);
+    let testVar = new RegExp(term.toLowerCase());
     for(let i=0; i<final.length; i++){
       if (testVar.test(final[i].category.toLowerCase()) || testVar.test(final[i].note.toLowerCase()) || testVar.test(final[i].title.toLowerCase())){
         absolute.push(final[i]);
@@ -187,16 +187,16 @@ class Dashboard extends Component {
             </div>);
         break;
       case 'cardprocess' :
-        html = <CardProcess finished={this.restoreDash.bind(this)} />;
+        html = <CardProcess finished={ this.restoreDash.bind(this) } />;
         break;
       case 'dashboard':
         html=(<div className="dashboard-options">
                 <div>
                   <div className="dashboard-selectors">
-                    <SearchBar onSearchTermChanged={this.searchTermChanged.bind(this)}/>
+                    <SearchBar searchTerm={this.state.searchTerm} onSearchTermChanged={ this.searchTermChanged.bind(this) }/>
                     <AddCard clicked={this.handleClick.bind(this)} />
                     </div>
-                <Cards things={cards} onChoose={this.handleChoose.bind(this)} doNotRoute={this.cutRouting.bind(this)}/>
+                <Cards things={cards} onChoose={this.handleChoose.bind(this)} doNotRoute={ this.cutRouting.bind(this) }/>
 
             </div>
 

@@ -6,7 +6,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-dashboard">
-        <input onKeyUp={this.props.onSearchTermChanged} className="search" type="text" placeholder="Search"></input>
+        <input ref="searchBar" onKeyUp={this.props.onSearchTermChanged} value={this.props.searchTerm || this.props.children} className="search" type="text"></input>
       </div>
     );
   }
