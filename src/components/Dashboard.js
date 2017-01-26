@@ -105,10 +105,11 @@ class Dashboard extends Component {
       cardNum:thisCardId
     });
   }
-  cancelCardView(){
-    console.log('cancelCardView');
+  cancelCardView(searchTerm){
+    console.log('cancelCardView searchTerm: ',searchTerm);
     this.setState({
-      show:'dashboard'
+      show:'dashboard',
+      searchTerm:searchTerm
     });
   }
   cutRouting(){
@@ -127,7 +128,8 @@ class Dashboard extends Component {
     .on('value',(data)=>{
       let snapshot = data.val();
       this.setState({
-        cards:firebaseListToArray(snapshot)
+        cards:firebaseListToArray(snapshot),
+        searchTerm:term
       });
 
 
@@ -183,7 +185,7 @@ class Dashboard extends Component {
     switch (dashState){
       case 'card':
         html = (<div>
-              <CardView category={this.state.category} cardId = { this.state.cardNum } cardNo={this.state.cardNum} onCancel={this.cancelCardView.bind(this)}/>
+              <CardView category={this.state.category} searchTerm={this.state.searchTerm} cardId = { this.state.cardNum } cardNo={this.state.cardNum} onCancel={this.cancelCardView.bind(this)}/>
             </div>);
         break;
       case 'cardprocess' :

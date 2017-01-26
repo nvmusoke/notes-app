@@ -103,7 +103,7 @@ class CardView extends Component {
           </form>
           </div>
           <div className="card-view-btns">
-            <button type="button" onClick={this.props.onCancel} className="btn">Cancel</button>
+            <button type="button" onClick={this.props.onCancel.bind(this,this.props.searchTerm)} className="btn">Cancel</button>
             <button className={this.state.hideEdit ? 'hidden' : 'btn' } type="button"  onClick={this.handleEdit.bind(this)}>Edit</button>
 
           </div>
