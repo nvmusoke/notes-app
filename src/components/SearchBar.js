@@ -20,7 +20,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-dashboard">
-        <input ref="searchBar" onChange={this.handleFilter.bind(this)} onKeyUp={this.props.searchTermChanged.bind(this)} value={this.state.searchTerm} className="search" type="text" ></input>
+        <input ref="searchBar" onChange={this.handleFilter.bind(this)} onKeyUp={this.props.onSearchTermChanged.bind(this)} value={this.state.searchTerm} className="search" type="text" ></input>
       </div>
     );
   }
