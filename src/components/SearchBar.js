@@ -9,17 +9,18 @@ class SearchBar extends Component {
     }
   }
 
-  // handleFilter(e){
-  //   console.log(e.target.value)
-  //   this.setState({
-  //     searchTerm: e.target.value
-  //   })
-  // }
+  handleFilter(e){
+    console.log('handleFilter value is: ',e.target.value)
+    this.setState({
+      searchTerm: e.target.value
+    })
+  }
+
 
   render() {
     return (
       <div className="search-dashboard">
-        <input ref="searchBar" onKeyUp={this.props.onSearchTermChanged.bind(this)} className="search" type="text"></input>
+        <input ref="searchBar" onChange={this.handleFilter.bind(this)} onKeyUp={this.props.onSearchTermChanged.bind(this)} value={this.state.searchTerm} className="search" type="text" ></input>
       </div>
     );
   }
