@@ -407,3 +407,8 @@ color: #000;
 .lookup-links li{
   list-style: none;
 }
+
+.embed-responsive-item{
+  resize: both;
+  overflow: auto;
+}
